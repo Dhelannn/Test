@@ -2,7 +2,7 @@ Hello I'm Dhelan and I made Console X! -
 -
 What's Console X?
 -
-Console X is a script made to give you access to the Developer Command Bar in Console (/Console) that let's you execute Scripts/Codes in the Command Bar. 
+Console X is a script made to give you access to the Developer Command Bar in Console (/Console) that let's you execute Scripts/Codes (Even Require Scripts) in the Command Bar. 
 -
 If you hate your Executor's UI and Love Developer Console UI or just want to Look like a "Real Hacker and not an Exploiter" then I recommend using my Script
 -
