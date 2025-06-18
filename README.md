@@ -1,4 +1,4 @@
-ConsoleX v1.3 -- Powered by Dhelan and Jhake
+📟 ConsoleX v1.3 -- Powered by Dhelan and Jhake
 -
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 -
@@ -11,7 +11,7 @@ ConsoleX is a script used to make your Console look like the Owner's by  giving 
 -
 BUT here's the catch, You can't execute Require Scripts on it like the Real Command line
 -
-Scriptblox Page:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 -
 Websites affiliated with ConsoleX
 -
