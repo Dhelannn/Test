@@ -1,3 +1,5 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+-
 📟 ConsoleX v1.3 -- Powered by Dhelan and Jhake
 -
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -17,7 +19,11 @@ BUT here's the catch, You can't execute Require Scripts on it like the Real Comm
 -
 Links/Websites related with ConsoleX
 -
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+-
 https://scriptblox.com/script/Universal-Script-Console-X-41895
 -
 https://angeldevaccv2.github.io/Supported-Exectours-For-ConsoleX/
+-
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 -
