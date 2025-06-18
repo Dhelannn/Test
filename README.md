@@ -1,6 +1,4 @@
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
--
-📟 ConsoleX v1.3 -- Powered by Dhelan and Jhake
+📟 ConsoleX v1.3 -- Powered by Dhelan and xlox263
 -
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 -
@@ -24,6 +22,4 @@ Links/Websites related with ConsoleX
 https://scriptblox.com/script/Universal-Script-Console-X-41895
 -
 https://angeldevaccv2.github.io/Supported-Exectours-For-ConsoleX/
--
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 -
