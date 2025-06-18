@@ -1,4 +1,9 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+-
+
 ConsoleX v1.3 -- Powered by Dhelan and Jhake
+-
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 -
 Consolex Information:
 -
