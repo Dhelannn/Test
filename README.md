@@ -1,3 +1,4 @@
+ConsoleX v1.3 -- Powered by Dhelan and Jhake
 -
 Consolex Information:
 -
@@ -8,9 +9,9 @@ BUT here's the catch, You can't execute Require Scripts on it like the Real Comm
 -
 Scriptblox Page:
 -
-https://scriptblox.com/script/Universal-Script-Console-X-41895
+Websites affiliated with ConsoleX
 -
-Check this GitHub.io Page to see supported executors: 
+https://scriptblox.com/script/Universal-Script-Console-X-41895
 -
 https://angeldevaccv2.github.io/Supported-Exectours-For-ConsoleX/
 -
