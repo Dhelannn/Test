@@ -2,10 +2,6 @@
 -
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 -
-Consolex Information:
--
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
--
 ConsoleX is a script used to make your Console look like the Owner's by  giving you the Command Line
 (Only shows for Owners) that you can execute Scripts on.
 -
