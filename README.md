@@ -1,4 +1,4 @@
-📟 ConsoleX v1.3 -- Powered by Dhelan and xlox263
+📟 ConsoleX v1.3 -- Powered by Dhelan and xlox262
 -
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 -
