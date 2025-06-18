@@ -1,6 +1,10 @@
-Console X
 -
-Lua/LuaU Executor Script
+Consolex Information:
+-
+ConsoleX is a script used to make your Console look like the Owner's by  giving you the Command Line
+(Only shows for Owners) that you can execute Scripts on.
+-
+BUT here's the catch, You can't execute Require Scripts on it like the Real Command line
 -
 Scriptblox Page:
 -
