@@ -1,7 +1,5 @@
 📟 ConsoleX v1.3 -- Powered by Dhelan and xlox262
 -
-Status: {Online}
--
 ConsoleX is a script used to make your Console look like the Owner's by  giving you the Command Line
 (Only shows for Owners) that you can execute Scripts on.
 -
