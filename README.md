@@ -47,7 +47,8 @@
 - Volcano  
 
 ---
-
+## Last Updated: June 19, 2025
+---
 ## ⚠️ Important Note
 
 > I am **NOT RESPONSIBLE** for any Bans, Malware, Account Loss, or Other Damages that may result from using any of the tools listed here.
@@ -59,4 +60,3 @@
 > If a tool does not work with TerminalX, it must be updated by **IT'S DEVELOPERS** to support **Moonsec V3 Obfuscator Functions**.
 
 ---
-## Last Updated: June 19 
