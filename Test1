@@ -1,11 +1,11 @@
 game.StarterGui:SetCore("SendNotification", {
-	Title = "[TerminalX V1.5]",
+	Title = "[TerminalX]",
 	Text = "Press F9 or type /console in chat.",
 	Duration = 15
 })
 
 task.spawn(function()
-	warn("[TerminalX] This is the old loadstring. The new one is now copied to your clipboard!")
+	warn("[TerminalX] This is the old loadstring, this one doesn't do anything anymore. The new one is now copied to your clipboard")
 
 	local loadstringText = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/heads/main/TerminalX"))()'
 
