@@ -43,5 +43,5 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/he
 + replicatedex
 
 # Important Note
-> More Commands will be added
+> More Commands will be added. 
 > Thanks for Checking out my Shitty Script
