@@ -46,6 +46,14 @@ that you can **Execute Scripts on.**
 - Argon  
 - Volcano  
 
+## ⚙️ Commands
+
+- /remoteSpy
+- /enable
+- /disable
+- /infinite yield
+- /dex
+
 ---
 ## Last Updated: June 19, 2025 [ + New Features]
 ---
