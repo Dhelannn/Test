@@ -36,3 +36,12 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/he
 + Owners of SSpy V3, IY and Dex - I added their Scripts as Commands
 + Kommander.IY - Concept Inspiration
 > Idk who owns that IY Plugin so If you own this IY Plugin, Much Love & Credits to you ❤
+
+# 😎 Cool People/My Friends
++ Vexification
++ MrSimple
++ replicatedex
+
+# Important Note
+> More Commands will be added
+> Thanks for Checking out my Shitty Script
