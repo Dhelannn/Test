@@ -31,6 +31,9 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/he
 ---
 
 # Credits
-> Dhelan
+> Dhelan - Owner and Developer
+
+
+
 ---
 > TerminalX (ConsoleX) was inspired by Kommander | Infinite Yield Plugin. 
