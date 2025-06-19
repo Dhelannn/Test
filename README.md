@@ -1,4 +1,4 @@
-## 📟 TerminalX v1.4 -- Powered by Eclipse Duo (Dhelan & xlox262)
+## 📟 TerminalX v1.4 -- Powered by Dhelan
 
 ---
 ## Information
@@ -59,3 +59,4 @@
 > If a tool does not work with TerminalX, it must be updated by **IT'S DEVELOPERS** to support **Moonsec V3 Obfuscator Functions**.
 
 ---
+## Last Updated: June 19 
