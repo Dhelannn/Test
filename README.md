@@ -30,5 +30,5 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/he
 
 ---
 
-# Credits
+# 👑 Credits
 + Dhelan - Owner and Developer
