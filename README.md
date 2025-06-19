@@ -26,9 +26,9 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/he
 
 ## 💾 Changelog | June 20, 2025
 
-- + New "/reset" Command. 
+- New "/reset" Command. 
 
 ---
 
 # Credits
-- Dhelan - Owner and Developer
++ Dhelan - Owner and Developer
