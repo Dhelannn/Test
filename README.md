@@ -33,7 +33,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/he
 # 👑 Credits
 + Dhelan       - Owner & Developer
 + xlox262      - Bestest Friend & Idea Guy
-+ Zinnia       - Owner & Developer of Dex Explorer
-+ Edge and Toon - Owner & Developer of Infinite Yield
++ Owners of SSpy V3, IY and Dex - I added their Scripts as Commands
 + Kommander.IY - Concept Inspiration
 > Idk who owns that IY Plugin so If you own this IY Plugin, Much Love & Credits to you ❤
