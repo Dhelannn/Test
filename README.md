@@ -2,8 +2,8 @@
 
 ---
 ## Information
-**TerminalX** is a script meant for RP/Trolling. it's used to make your Console look like the Owner's by  giving you the Command Line
-(Only shows for Owners) that you can **Execute Scripts on.**
+**TerminalX** is a script meant for RP/Trolling. it's used to make your Console look like the Owner's by  giving you the Command Line (It also has a /cmds Command that let's you shows you what Built-In Commands TerminalX has like /remoteSpy) 
+that you can **Execute Scripts on.**
 
 **BUT** here's the catch, You can't execute Require Scripts on it like the Real Command line, but you can **Execute Normal Scripts** on it
 
