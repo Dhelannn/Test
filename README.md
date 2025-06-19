@@ -12,11 +12,11 @@ that you can **Execute Scripts on.**
 
 ## ⚙️ Commands
 
-- /remotespy
+- **/remotespy
 - /enable
 - /disable
 - /infinite yield
-- /dex
+- /dex**
 
 ---
 
