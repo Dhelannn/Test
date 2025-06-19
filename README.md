@@ -10,10 +10,6 @@ that you can **Execute Scripts on.**
 
 ---
 
-Since TerminalX is now Open-Source it now supports all Executors
-
----
-
 ## ⚙️ Commands
 
 - /remotespy
@@ -23,16 +19,13 @@ Since TerminalX is now Open-Source it now supports all Executors
 - /dex
 
 ---
-## Last Updated: June 19, 2025 [ + New Features]
----
-## ⚠️ Important Note
 
-> I am **NOT RESPONSIBLE** for any Bans, Malware, Account Loss, or Other Damages that may result from using any of the tools listed here.
+## ⚠️ Changelog | June 19, 2025
 
-> I have **NOT personally Verified or Tested** these Executors.  
+> TerminalX is now Open-Source. 
 
-> I **CANNOT provide support** for these tools.  
+> Now Supports all Executors. 
 
-> If a tool does not work with TerminalX, it must be updated by **IT'S DEVELOPERS** to support **Moonsec V3 Obfuscator Functions**.
+> Added Built-In Commands/Scripts.
 
 ---
