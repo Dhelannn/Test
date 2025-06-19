@@ -47,7 +47,7 @@
 - Volcano  
 
 ---
-## Last Updated: June 19, 2025 [+ New Features]
+## Last Updated: June 19, 2025 [ + New Features]
 ---
 ## ⚠️ Important Note
 
