@@ -21,7 +21,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/he
 - /disable
 - /infinite yield
 - /dex
-
+- /reset
 ---
 
 ## 💾 Changelog | June 20, 2025
