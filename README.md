@@ -32,4 +32,5 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/he
 
 # 👑 Credits
 + Dhelan - Owner and Developer
-+ Kommander Infinite Yield Plugin - Inspiration, Idk who owns that IY Plugin so I just putted the name of it
++ Kommander Infinite Yield Plugin - Inspiration
+> Idk who owns that IY Plugin so I just putted the name of it
