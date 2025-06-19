@@ -8,6 +8,11 @@ that you can **Execute Scripts on.**
 
 **BUT** here's the catch, You can't execute Require Scripts on it like the Real Command line, but you can **Execute Normal Scripts** on it
 
+
+## 🌐 Script
+```
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/heads/main/Test1"))()
+```
 ---
 
 ## ⚙️ Commands
