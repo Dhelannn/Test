@@ -24,12 +24,8 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/he
 
 ---
 
-## 💾 Changelog | June 19, 2025
+## 💾 Changelog | June 20, 2025
 
-> + TerminalX is now Open-Source. 
-
-> + Now Supports all Executors. 
-
-> + Added Built-In Commands/Scripts.
+> + New "/reset" Command. 
 
 ---
