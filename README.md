@@ -50,7 +50,7 @@ that you can **Execute Scripts on.**
 
 ## ⚙️ Commands
 
-- /remoteSpy
+- /remotespy
 - /enable
 - /disable
 - /infinite yield
