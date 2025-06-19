@@ -11,7 +11,7 @@ that you can **Execute Scripts on.**
 
 ## 🌐 Script
 ```
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/heads/main/Test1"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/heads/main/TerminalX"))()
 ```
 ---
 
