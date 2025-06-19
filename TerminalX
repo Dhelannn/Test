@@ -141,6 +141,10 @@ elseif cmd == "/infiniteyield" then
 		fetch("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")
 elseif cmd == "/dex" then
 		fetch("https://raw.githubusercontent.com/peyton2465/Dex/master/out.lua")
+elseif cmd == "/reset" then
+                local lp = game:GetService("Players").LocalPlayer
+local char = lp.Character or lp.CharacterAdded:Wait()
+char:BreakJoints()
 elseif cmd == "/cmds" then
 warn("") 
 warn("[TerminalX v1.5] Command List:")
@@ -150,6 +154,7 @@ warn("/dex           - Dex Explorer")
 warn("/infiniteyield - IY Admin")
 warn("/remotespy     - SimpleSpy")
 warn("/cmds          - Shows this list")
+warn("/reset         - Force Reset") 
 warn("") 
 warn("") 
 else
