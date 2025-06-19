@@ -33,5 +33,5 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/he
 # 👑 Credits
 + Dhelan       - Owner and Developer
 + xlox262      - Bestest Friend & Idea Guy
-+ Kommander.IY - Concept Origin
-> Idk who owns that IY Plugin so I just putted the name of it
++ Kommander.IY - Concept Inspiration
+> Idk who owns that IY Plugin so I just putted the name of it (If you own this IY Plugin, Credits to you ❤) 
