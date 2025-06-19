@@ -1,4 +1,4 @@
-## 📟 TerminalX v1.4 -- Powered by Dhelan
+## 📟 TerminalX v1.5 -- Powered by Dhelan
 
 ---
 ## Information
