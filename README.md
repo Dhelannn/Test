@@ -1,53 +1,13 @@
 ## 📟 TerminalX v1.5 -- Powered by Dhelan
-
 ---
 ## Information
 **TerminalX** is a script meant for RP/Trolling. it's used to make your Console look like the Owner's by  giving you the Command Line (It also has Built-In Commands/Scripts that can be seen by typing /cmds in the Command Bar.) 
 that you can **Execute Scripts on.**
 
 **BUT** here's the catch, You can't execute Require Scripts on it like the Real Command line, but you can **Execute Normal Scripts** on it
-
- NOTE: **TerminalX** Also known as **ConsoleX** has been Obfuscated using **MOONSEC V3** resulting in some executors 
-**NOT SUPPORTING IT** 
-
-# 🚀 ConsoleX Supported Executors
-
 ---
-
-## ✅ Supported Executors
-
-- AWP.GG  
-- Zenith  
-- Seliware  
-- Wave  
-- Swift  
-- Delta *(Recommended)*  
-- Frostware  
-- KRNL  
-
+Since TerminalX is now Open-Source it now supports all Executors
 ---
-
-## 💰 Paid Executors
-
-- AWP.GG  
-- Zenith  
-- Wave  
-- Seliware  
-- SirHurt  
-- Potassium  
-
----
-
-## 👑 Free Executors
-
-- Swift  
-- Dynamic  
-- Cryptic  
-- Argon  
-- Volcano  
-
----
-
 ## ⚙️ Commands
 
 - /remotespy
