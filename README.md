@@ -31,7 +31,9 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/he
 ---
 
 # 👑 Credits
-+ Dhelan       - Owner and Developer
++ Dhelan       - Owner & Developer
 + xlox262      - Bestest Friend & Idea Guy
++ Zinnia       - Owner & Developer of Dex Explorer
++ Edge and Toon - Owner & Developer of Infinite Yield
 + Kommander.IY - Concept Inspiration
 > Idk who owns that IY Plugin so If you own this IY Plugin, Much Love & Credits to you ❤
