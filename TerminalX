@@ -1,4 +1,4 @@
--- 📟 TerminalX v1.5
+-- TerminalX v1.5
 -- by Dhelan
 
 if _G.__TerminalX_Executed then return end
