@@ -1,5 +1,7 @@
 **📟 TerminalX v1.5 -- Owned and Developed by Dhelan**
+
 ---
+
 **📜 Information**
 - **TerminalX** Formerly known as **ConsoleX** is a script meant for RP/Trolling. it's used to make your Console look like the Owner's by  giving you the Command Bar that you can **Execute Scripts on.** (It also has Built-In Commands/Scripts that can be seen by typing /cmds in the Command Bar.) 
 
