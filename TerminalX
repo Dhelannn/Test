@@ -145,6 +145,12 @@ elseif cmd == "/reset" then
                 local lp = game:GetService("Players").LocalPlayer
 local char = lp.Character or lp.CharacterAdded:Wait()
 char:BreakJoints()
+elseif cmd == "/credits" then
+                warn("👑 Credits") 
+warn("Dhelan         - Owner & Developer") 
+warn("xlox262      - Bestest Friend & Idea Guy") 
+warn("Owners of SSpy V3, IY and Dex - I added their Scripts as Commands") 
+warn("Kommander.IY - The Script's Concept was Inspired by this IY Plugin") 
 elseif cmd == "/cmds" then
 warn("") 
 warn("[TerminalX v1.5] Command List:")
