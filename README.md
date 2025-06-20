@@ -1,7 +1,5 @@
 **📟 TerminalX v1.5 -- Owned and Developed by Dhelan**
 
----
-
 **📜 Information**
 - **TerminalX** Formerly known as **ConsoleX** is a script meant for RP/Trolling. it's used to make your Console look like the Owner's by  giving you the Command Bar that you can **Execute Scripts on.** (It also has Built-In Commands/Scripts that can be seen by typing /cmds in the Command Bar.) 
 
@@ -12,7 +10,6 @@
 ```
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/heads/main/TerminalX"))()
 ```
----
 
 **⚙️ Commands**
 
@@ -22,13 +19,11 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/he
 - /infinite yield
 - /dex
 - /reset
----
 
 **💾 Changelog | June 20, 2025**
 
 - New "/reset" Command.
 
----
 **👑 Credits**
 + Dhelan       - Owner & Developer
 + xlox262      - Bestest Friend & Idea Guy
@@ -37,7 +32,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/he
 + Kommander.IY - Concept Inspiration
 > Idk who owns that IY Plugin so If you own this IY Plugin, Much Love & Credits to you ❤
 
----
 **📝 Note:**
 > Thanks for checking out TerminalX! (ConsoleX)
 > Btw, Stay tuned for more Commands/Features!  
