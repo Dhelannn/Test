@@ -1,14 +1,14 @@
 if _G.__TerminalX_Executed then return end
 _G.__TerminalX_Executed = true
 
-local plr = game.Players.LocalPlayer
+local Players = game:GetService("Players")
+local plr = Players.LocalPlayer
 
 game.StarterGui:SetCore("SendNotification", {
 Title = "[TerminalX V1.5]",
 Text = "Press F9 or type /console in chat.",
 Duration = 15
 })
-
 task.spawn(function()
 task.wait(0.2)
 local cg = game:GetService("CoreGui")
@@ -170,24 +170,29 @@ elseif cmd:match("^/tp") then
 	table.insert(args, word)
 	end
 	local targetName = args[2]
-	if not targetName then
-	warn("[TerminalX] Usage: /tp [player]")
-	else
+	if targetName then
 	local Players = game:GetService("Players")
 	local lp = Players.LocalPlayer
-	local function findTarget(name)
-	for _, plr in pairs(Players:GetPlayers()) do
-	if plr ~= lp and plr.Name:lower():sub(1, #name) == name:lower() then
+        local function findTarget(name)
+	name = name:lower()
+	for _, plr in ipairs(game:GetService("Players"):GetPlayers()) do
+	if plr ~= game.Players.LocalPlayer then
+	local uname = plr.Name:lower()
+	local dname = plr.DisplayName:lower()
+	if uname:find(name) or dname:find(name) then
 	return plr
 	end
 	end
-	return nil
 	end
+	return nil
+        end
 	local target = findTarget(targetName)
 	if target and target.Character and target.Character:FindFirstChild("HumanoidRootPart") then
 	local hrp = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
 	if hrp then
 	hrp.CFrame = target.Character.HumanoidRootPart.CFrame + Vector3.new(0, 3, 0)
+	end
+	end
 	end
 elseif cmd == "/cmds" then
 warn("") 
