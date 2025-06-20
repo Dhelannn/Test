@@ -25,12 +25,11 @@
 + xlox262      - Bestest Friend & Idea Guy
 + MastersMz    - Showcased ConsoleX (TerminalX) 
 + Owners of SSpy V3, IY and Dex - I added their Scripts as Commands
-+ Kommander.IY - Concept Inspiration
-> Idk who owns that IY Plugin so If you own this IY Plugin, Much Love & Credits to you ❤
++ Kommander.IY - Script Concept Inspiration
+```
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/heads/main/TerminalX"))()
+```
 
 **📝 Note:**
 > Thanks for checking out TerminalX! (ConsoleX)
 > Btw, Stay tuned for more Commands/Features!
-```
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/heads/main/TerminalX"))()
-```
