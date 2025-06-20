@@ -24,7 +24,7 @@
 + Dhelan       - Owner & Developer
 + xlox262      - Bestest Friend & Idea Guy
 + Owners of SSpy V3, IY and Dex - I added their Scripts as Commands
-+ Kommander.IY - Script's Concept Inspiration
++ Kommander.IY - The Script's Concept was Inspired by this IY Plugin
 ```
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/heads/main/TerminalX"))()
 ```
