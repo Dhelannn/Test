@@ -33,14 +33,19 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/he
 # 👑 Credits
 + Dhelan       - Owner & Developer
 + xlox262      - Bestest Friend & Idea Guy
++ MastersMz    - Showcased ConsoleX (TerminalX) 
 + Owners of SSpy V3, IY and Dex - I added their Scripts as Commands
 + Kommander.IY - Concept Inspiration
 > Idk who owns that IY Plugin so If you own this IY Plugin, Much Love & Credits to you ❤
+
+---
 
 # 😎 Cool People/My Friends
 + Vexification
 + MrSimple
 + replicatedex
+
+---
 
 # 🤫 Not so Secret Note
 > More Commands will be added. 
