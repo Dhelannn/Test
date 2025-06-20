@@ -191,5 +191,5 @@ nukeUIs(plr:WaitForChild("PlayerGui"))
 nukeUIs(game:GetService("StarterGui"))
 
 warn("[TerminalX V1.5]")
-task.wait(0.9)
 warn("Type /cmds to see all Built-In Commands.")
+warn("Or put a Script or Code in the Command Bar and press enter to Execute it.) 
