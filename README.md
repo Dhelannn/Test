@@ -25,7 +25,7 @@
 + xlox262      - Bestest Friend & Idea Guy
 + MastersMz    - Showcased ConsoleX (TerminalX) 
 + Owners of SSpy V3, IY and Dex - I added their Scripts as Commands
-+ Kommander.IY - Script Concept Inspiration
++ Kommander.IY - Script's Concept Inspiration
 ```
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/heads/main/TerminalX"))()
 ```
