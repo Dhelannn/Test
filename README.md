@@ -16,11 +16,15 @@
 - **/dex**
 - **/reset**
 - **/credits**
+- **/rejoin**
+- **/serverhop**
 
 **💾 Changelog | June 20, 2025**
 
 - New **"/reset"** Command
 - New **"/credits"** Command
+- New **"/rejoin"** Command
+- New **"/serverhop"** Command
 
 **👑 Credits**
 + **Dhelan**       - Owner & Developer
