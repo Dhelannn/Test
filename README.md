@@ -1,4 +1,4 @@
-**📟 TerminalX v1.5 -- Owned and Developed by Dhelan**
+**📟 TerminalX v1.5**
 
 ---
 
