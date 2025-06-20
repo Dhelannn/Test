@@ -15,10 +15,12 @@
 - **/infinite yield**
 - **/dex**
 - **/reset**
+- **/credits**
 
 **💾 Changelog | June 20, 2025**
 
-- New **"/reset"** Command.
+- New **"/reset"** Command
+- New **"/credits")** Command
 
 **👑 Credits**
 + **Dhelan**       - Owner & Developer
