@@ -33,11 +33,11 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/he
 > Idk who owns that IY Plugin so If you own this IY Plugin, Much Love & Credits to you ❤
 
 ---
-
-## 📝 Note
-- Thanks for checking out TerminalX! (ConsoleX)
-- Btw, Stay tuned for more Commands/Features! 
-
 ## 💾 Changelog | June 20, 2025
 
-- New "/reset" Command. 
+- New "/reset" Command.
+
+---
+> 📝 Note:
+> Thanks for checking out TerminalX! (ConsoleX)
+> Btw, Stay tuned for more Commands/Features!  
