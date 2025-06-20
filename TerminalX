@@ -163,6 +163,32 @@ elseif cmd == "/serverhop" then
                 break
                 end
                 end
+elseif cmd == "/tp" then
+elseif cmd:match("^/tp") then
+	local args = {}
+	for word in txt:gmatch("%S+") do
+	table.insert(args, word)
+	end
+	local targetName = args[2]
+	if not targetName then
+	warn("[TerminalX] Usage: /goto [player]")
+	else
+	local Players = game:GetService("Players")
+	local lp = Players.LocalPlayer
+	local function findTarget(name)
+	for _, plr in pairs(Players:GetPlayers()) do
+	if plr ~= lp and plr.Name:lower():sub(1, #name) == name:lower() then
+	return plr
+	end
+	end
+	return nil
+	end
+	local target = findTarget(targetName)
+	if target and target.Character and target.Character:FindFirstChild("HumanoidRootPart") then
+	local hrp = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
+	if hrp then
+	hrp.CFrame = target.Character.HumanoidRootPart.CFrame + Vector3.new(0, 3, 0)
+	end
 elseif cmd == "/cmds" then
 warn("") 
 warn("[TerminalX v1.5] Command List:")
