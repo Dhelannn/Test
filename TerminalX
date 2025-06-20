@@ -150,6 +150,21 @@ warn("Dhelan         - Owner & Developer")
 warn("xlox262      - Bestest Friend & Idea Guy") 
 warn("Owners of SSpy V3, IY and Dex - I added their Scripts as Commands") 
 warn("Kommander.IY - The Script's Concept was Inspired by this IY Plugin") 
+elseif cmd == "/rejoin" then
+                local TeleportService = game:GetService("TeleportService")
+                local Players = game:GetService("Players")
+                local LocalPlayer = Players.LocalPlayer
+                TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, LocalPlayer)
+elseif cmd == "/serverhop" then
+                local ts, plr = game:GetService("TeleportService"), game.Players.LocalPlayer
+                local id, sid = game.PlaceId, game.JobId
+                local s = game:HttpGet("https://games.roblox.com/v1/games/"..id.."/servers/Public?limit=100")
+                for _, v in pairs(game:GetService("HttpService"):JSONDecode(s).data) do
+                if v.playing < v.maxPlayers and v.id ~= sid then
+                ts:TeleportToPlaceInstance(id, v.id, plr)
+                break
+                end
+                end
 elseif cmd == "/cmds" then
 warn("") 
 warn("[TerminalX v1.5] Command List:")
