@@ -1,3 +1,5 @@
+-- TerminalX by Dhelan
+
 if _G.__TerminalX_Executed then return end
 _G.__TerminalX_Executed = true
 
