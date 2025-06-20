@@ -1,6 +1,3 @@
--- TerminalX v1.5
--- by Dhelan
-
 if _G.__TerminalX_Executed then return end
 _G.__TerminalX_Executed = true
 
@@ -146,7 +143,7 @@ elseif cmd == "/reset" then
 local char = lp.Character or lp.CharacterAdded:Wait()
 char:BreakJoints()
 elseif cmd == "/credits" then
-                warn("👑 Credits") 
+warn("👑 Credits") 
 warn("Dhelan         - Owner & Developer") 
 warn("xlox262      - Bestest Friend & Idea Guy") 
 warn("Owners of SSpy V3, IY and Dex - I added their Scripts as Commands") 
@@ -161,9 +158,9 @@ warn("/infiniteyield - IY Admin")
 warn("/remotespy     - SimpleSpy")
 warn("/cmds          - Shows this list")
 warn("/reset         - Force Reset") 
-warn("/credits       - Shows Credits
+warn("/credits       - Shows Credits")
 warn("") 
-warn("") 
+warn("")
 else
 pcall(function() loadstring(txt)() end)
 end
