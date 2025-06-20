@@ -155,6 +155,7 @@ warn("/infiniteyield - IY Admin")
 warn("/remotespy     - SimpleSpy")
 warn("/cmds          - Shows this list")
 warn("/reset         - Force Reset") 
+warn("/credits       - Shows Credits
 warn("") 
 warn("") 
 else
@@ -184,6 +185,6 @@ nukeUIs(game:GetService("CoreGui"))
 nukeUIs(plr:WaitForChild("PlayerGui"))
 nukeUIs(game:GetService("StarterGui"))
 
-warn("[TerminalX V1.5] Powered by Dhelan")
+warn("[TerminalX V1.5]")
 task.wait(0.9)
 warn("Type /cmds to see all Built-In Commands.")
