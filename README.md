@@ -24,6 +24,11 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/he
 - /reset
 ---
 
+**💾 Changelog | June 20, 2025**
+
+- New "/reset" Command.
+
+---
 **👑 Credits**
 + Dhelan       - Owner & Developer
 + xlox262      - Bestest Friend & Idea Guy
@@ -31,11 +36,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/he
 + Owners of SSpy V3, IY and Dex - I added their Scripts as Commands
 + Kommander.IY - Concept Inspiration
 > Idk who owns that IY Plugin so If you own this IY Plugin, Much Love & Credits to you ❤
-
----
-**💾 Changelog | June 20, 2025**
-
-- New "/reset" Command.
 
 ---
 **📝 Note:**
