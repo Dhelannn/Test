@@ -20,7 +20,7 @@
 **💾 Changelog | June 20, 2025**
 
 - New **"/reset"** Command
-- New **"/credits")** Command
+- New **"/credits"** Command
 
 **👑 Credits**
 + **Dhelan**       - Owner & Developer
