@@ -7,12 +7,6 @@
 
 - **BUT** here's the catch, You can't execute Require Scripts on it like the Real Command line, but you can **Execute Normal Scripts** on it
 
-
-**🌐 Script's Loadstring**
-```
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/heads/main/TerminalX"))()
-```
-
 **⚙️ Commands**
 
 - /remotespy
@@ -36,4 +30,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/he
 
 **📝 Note:**
 > Thanks for checking out TerminalX! (ConsoleX)
-> Btw, Stay tuned for more Commands/Features!  
+> Btw, Stay tuned for more Commands/Features!
+```
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/heads/main/TerminalX"))()
+```
