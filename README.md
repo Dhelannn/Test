@@ -24,12 +24,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/he
 - /reset
 ---
 
-## 💾 Changelog | June 20, 2025
-
-- New "/reset" Command. 
-
----
-
 # 👑 Credits
 + Dhelan       - Owner & Developer
 + xlox262      - Bestest Friend & Idea Guy
@@ -40,13 +34,10 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/he
 
 ---
 
-# 😎 Cool People/My Friends
-+ Vexification
-+ MrSimple
-+ replicatedex
+## 📝 Note
+- Thanks for checking out TerminalX! (ConsoleX)
+- Btw, Stay tuned for more Commands/Features! 
 
----
+## 💾 Changelog | June 20, 2025
 
-# 🤫 Not so Secret Note
-> More Commands will be added. 
-> Thanks for Checking out my Shitty Script
+- New "/reset" Command. 
