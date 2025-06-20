@@ -171,7 +171,7 @@ elseif cmd:match("^/tp") then
 	end
 	local targetName = args[2]
 	if not targetName then
-	warn("[TerminalX] Usage: /goto [player]")
+	warn("[TerminalX] Usage: /tp [player]")
 	else
 	local Players = game:GetService("Players")
 	local lp = Players.LocalPlayer
