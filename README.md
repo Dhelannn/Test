@@ -23,7 +23,6 @@
 **👑 Credits**
 + Dhelan       - Owner & Developer
 + xlox262      - Bestest Friend & Idea Guy
-+ MastersMz    - Showcased ConsoleX (TerminalX) 
 + Owners of SSpy V3, IY and Dex - I added their Scripts as Commands
 + Kommander.IY - Script's Concept Inspiration
 ```
