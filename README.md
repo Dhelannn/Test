@@ -25,7 +25,7 @@
 - New **"/credits"** Command
 - New **"/rejoin"** Command
 - New **"/serverhop"** Command
-- New **"/Tp"** Command
+- New **"/tp"** Command
 
 **👑 Credits**
 + **Dhelan**       - Owner & Developer
