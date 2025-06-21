@@ -151,7 +151,7 @@ input.Text = ""
 return
 end
 
-elseif cmd == "/wasdfly" then
+if cmd == "/wasdfly" then
 local FLYING = false
 local SPEED = 1
 local TELEPORT_FLY = false
@@ -517,7 +517,7 @@ end
 task.defer(function()
 list.CanvasSize = UDim2.new(0, 0, 0, layout.AbsoluteContentSize.Y + 5)
 end)
-elseif cmd == "/credits" then
+if cmd == "/credits" then
 local plr = game.Players.LocalPlayer
 local gui = Instance.new("ScreenGui", plr:WaitForChild("PlayerGui"))
 gui.Name = "Cmds"
