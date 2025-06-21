@@ -1,4 +1,4 @@
-if _G.__TerminalX_Executed then return end
+ if _G.__TerminalX_Executed then return end
 _G.__TerminalX_Executed = true
 
 if typeof(task) ~= "table" or not task.wait then
@@ -201,20 +201,8 @@ input.FocusLost:Connect(function(enter)
 			end
 		end
 	elseif cmd == "/cmds" then
-		warn("[TerminalX v1.5] Command List:")
-		warn("/enable        - Bring Executor UI back")
-		warn("/disable       - Hide Executor UI")
-		warn("/dex           - Dex Explorer")
-		warn("/infiniteyield - IY Admin")
-		warn("/remotespy     - SimpleSpy")
-		warn("/cmds          - Shows this list")
-		warn("/reset         - Force Reset")
-		warn("/credits       - Shows Credits")
-		warn("/serverhop     - Hops to different Server")
-		warn("/rejoin        - Joins the same Server")
-                warn("/tp [Player]   - Teleports to the Selected Player")
-                warn("") 
-                warn("") 
+		fetch("https://raw.githubusercontent.com/Dhelannn/idk/refs/heads/main/Commands") 
+
                 elseif cmd == "/credits" then
 		warn("👑 Credits")
 		warn("Dhelan         - Owner & Developer")
