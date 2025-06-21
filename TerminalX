@@ -214,6 +214,8 @@ input.FocusLost:Connect(function(enter)
     end)
     elseif cmd == "/enable" then
         bringBack()
+    elseif cmd == "/goon" then
+    fetch("https://pastefy.app/lawnvcTT/raw")
     elseif cmd == "/disable" then
         hideShit()
     elseif cmd == "/lay" then
@@ -462,6 +464,7 @@ input.FocusLost:Connect(function(enter)
         "/mfly          - Mobile Fly",
         "/wasdfly       - WASD + QE Keys Fly",
         "/unfly         - Disable Fly",
+        "/goon          - Self Explanatory"), 
         "Note: All Fly and Unfly Commands are", 
         "Buggy/Broken I will fix maybe Tommorow", 
     }
