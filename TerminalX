@@ -13,7 +13,7 @@ getgenv().TerminalX_LOADED = true
  local plr = Players.LocalPlayer
 
  game.StarterGui:SetCore("SendNotification", {
-  Title = "[TerminalX V1.5]",
+  Title = "[TerminalX]",
   Text = "Press F9 or type /console in chat.",
   Duration = 15
  })
@@ -239,7 +239,7 @@ getgenv().TerminalX_LOADED = true
     })
    end
   elseif cmd == "/cmds" then
-   warn("[terminalx] commands: 11")
+   warn("[TerminalX] Commands: (14)")
    warn("/enable        - Bring Executor UI Back")
    warn("/disable       - Hide Executor UI")
    warn("/dex           - Dex Explorer")
