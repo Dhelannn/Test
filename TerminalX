@@ -147,7 +147,7 @@ getgenv().TerminalX_LOADED = true
  table.insert(args, word)
  end
 
-elseif cmd == "/WASDfly" then
+elseif cmd == "/wasdfly" then
 local FLYING = false
 local SPEED = 1
 local TELEPORT_FLY = false
@@ -496,8 +496,8 @@ local commands = {
 	"/sit           - Forces you to Sit",
 	"/lay           - Makes you lay down",
         "/mfly          - Mobile Fly", 
-        "/WASDfly       - WASD + QE Keys Fly",
-        "/Unfly         - Disable Fly",
+        "/wasdfly       - WASD + QE Keys Fly",
+        "/unfly         - Disable Fly",
 }
 
 for _, text in ipairs(commands) do
