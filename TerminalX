@@ -240,7 +240,23 @@ Duration = 5
 })
 end
 elseif cmd == "/cmds" then
-fetch("https://raw.githubusercontent.com/Dhelannn/idk/main/Commands.lua")
+warn("[terminalx] commands: 11")
+warn("/enable        - Bring Executor UI Back")
+warn("/disable       - Hide Executor UI")
+warn("/dex           - Dex Explorer")
+warn("/infiniteyield - IY Admin")
+warn("/remotespy     - SimpleSpy V3")
+warn("/cmds          - Shows this List")
+warn("/reset         - Force Reset")
+warn("/credits       - Shows Credits")
+warn("/serverhop     - Hops to Different Server")
+warn("/rejoin        - Joins the Same Server")
+warn("/tp [player]   - Teleports to the Selected Player")
+warn("/godmode  - Makes you Unkillable but makes you Reset First
+warn("/antifling - Gives you Immunity against Fling Exploits") 
+warn("/unantifling - Self Explanatory ") 
+warn("")
+warn("")
 elseif cmd == "/credits" then
 warn("👑 Credits")
 warn("Dhelan - Owner & Developer")
