@@ -224,7 +224,7 @@ if char then
 	end  
 	game.StarterGui:SetCore("SendNotification", {  
 		Title = "[TerminalX]",  
-		Text = "Anti-fling disabled.",  
+		Text = "Anti-fling disabled,Protected against Exploiters",  
 		Duration = 5  
 	        })  
                 end  
@@ -241,12 +241,12 @@ v.Massless = false
 	char:BreakJoints()  
 	game.StarterGui:SetCore("SendNotification", {  
 		Title = "[TerminalX]",  
-		Text = "Godmode Enabled",  
+		Text = "Godmode Enabled,Rejoin to Disable",  
 		Duration = 5  
                     })  
                 end  
             elseif cmd == "/cmds" then  
-	fetch("https://raw.githubusercontent.com/Dhelannn/idk/main/Commands.lua")")   
+	fetch("https://raw.githubusercontent.com/Dhelannn/idk/main/Commands.lua")  
 
             elseif cmd == "/credits" then  
 	warn("👑 Credits")  
