@@ -20,7 +20,7 @@
 + **Kommander.IY** - The Script's Concept was Inspired by this IY Plugin
 
 ```
-⚙️ Commands [16]
+⚙️ Commands [18]
 
         /enable        - Bring Executor UI Back
   
@@ -53,6 +53,9 @@
 	/sit         - Forces you to Sit
  
 	/lay         - Makes you lay down
+        /mfly        - Mobile Fly
+        /wasdfly     - WASD + QE Keys Fly
+        /unfly       - Disable Fly
 ```
 ```
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/heads/main/TerminalX"))()
