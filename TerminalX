@@ -151,6 +151,39 @@ getgenv().TerminalX_LOADED = true
  bringBack()
  elseif cmd == "/disable" then
  hideShit()
+ elseif cmd == "/lay" then
+ local plr = game.Players.LocalPlayer
+ local char = plr.Character or plr.CharacterAdded:Wait()
+ local hum = char:WaitForChild("Humanoid")
+ local hrp = char:WaitForChild("HumanoidRootPart")
+ local uis = game:GetService("UserInputService")
+ local laying = true
+ local rayOrigin = hrp.Position
+ local rayDirection = Vector3.new(0, -20, 0)
+ local rayParams = RaycastParams.new()
+ rayParams.FilterDescendantsInstances = {char}
+ rayParams.FilterType = Enum.RaycastFilterType.Blacklist
+ local result = workspace:Raycast(rayOrigin, rayDirection, rayParams)
+ if result then
+	local groundY = result.Position.Y
+	local hrpY = hrp.Size.Y / 2
+	hrp.CFrame = CFrame.new(hrp.Position.X, groundY + hrpY + 0.05, hrp.Position.Z) * CFrame.Angles(math.rad(90), 0, 0)
+ end
+ hum.PlatformStand = true
+ uis.InputBegan:Connect(function(input, gpe)
+	if laying and not gpe and (input.UserInputType == Enum.UserInputType.Touch or input.KeyCode == Enum.KeyCode.Space) then
+	laying = false
+	end
+ end)
+ task.spawn(function()
+	while laying do
+	if not hum.PlatformStand then
+	hum.PlatformStand = true
+	end
+	task.wait(0.1)
+	end
+	hum.PlatformStand = false
+ end)
  elseif cmd == "/remotespy" then
  fetch("https://raw.githubusercontent.com/78n/SimpleSpy/refs/heads/main/SimpleSpySource.lua")
  elseif cmd == "/infiniteyield" then
@@ -258,7 +291,7 @@ getgenv().TerminalX_LOADED = true
  })
  end
  elseif cmd == "/cmds" then
- warn("[TerminalX] Commands: (15)")
+ warn("[TerminalX] Commands: (16)")
  warn("/enable        - Bring Executor UI Back")
  warn("/disable       - Hide Executor UI")
  warn("/dex           - Dex Explorer")
@@ -274,6 +307,7 @@ getgenv().TerminalX_LOADED = true
  warn("/antifling     - Immunity against Fling Exploits")
  warn("/unantifling   - Removes Fling Immunity")
  warn("/sit           - Forces you to Sit") 
+ warn("/lay           - Makes you lay down") 
  warn("")
  warn("")
  elseif cmd == "/credits" then
