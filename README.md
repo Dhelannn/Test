@@ -1,4 +1,4 @@
-**📟 TerminalX v1.5**
+**📟 TerminalX v1.6**
 
 ---
 
