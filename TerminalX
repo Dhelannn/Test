@@ -153,7 +153,7 @@ elseif cmd == "/disable" then
 elseif cmd == "/remotespy" then  
 	fetch("https://raw.githubusercontent.com/78n/SimpleSpy/refs/heads/main/SimpleSpySource.lua")  
 elseif cmd == "/infiniteyield" then  
-	fetch("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")  
+	fetch("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source.lua")  
 elseif cmd == "/dex" then  
 	fetch("https://raw.githubusercontent.com/peyton2465/Dex/master/out.lua")  
 elseif cmd == "/reset" then  
@@ -246,7 +246,7 @@ v.Massless = false
                     })  
                 end  
             elseif cmd == "/cmds" then  
-	fetch("https://raw.githubusercontent.com/Dhelannn/idk/refs/heads/main/Commands")   
+	fetch("https://raw.githubusercontent.com/Dhelannn/idk/main/Commands.lua")")   
 
             elseif cmd == "/credits" then  
 	warn("👑 Credits")  
