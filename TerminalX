@@ -221,6 +221,25 @@ getgenv().TerminalX_LOADED = true
  Duration = 5
  })
  end
+ elseif cmd == "/sit" then
+ local plr = game.Players.LocalPlayer
+ local char = plr.Character or plr.CharacterAdded:Wait()
+ local hum = char:WaitForChild("Humanoid")
+ hum.Sit = true
+ local sitting = true
+ hum.StateChanged:Connect(function(old, new)
+ if sitting and new == Enum.HumanoidStateType.Jumping then
+ sitting = false
+ end
+ end)
+ task.spawn(function()
+ while sitting and hum and hum.Parent do
+ if not hum.Sit then
+ hum.Sit = true
+ end
+ task.wait(0.1) 
+ end
+ end)
  elseif cmd == "/godmode" then
  local char = plr.Character
  if char then
@@ -239,7 +258,7 @@ getgenv().TerminalX_LOADED = true
  })
  end
  elseif cmd == "/cmds" then
- warn("[TerminalX] Commands: (14)")
+ warn("[TerminalX] Commands: (15)")
  warn("/enable        - Bring Executor UI Back")
  warn("/disable       - Hide Executor UI")
  warn("/dex           - Dex Explorer")
@@ -254,6 +273,7 @@ getgenv().TerminalX_LOADED = true
  warn("/godmode       - Makes you Unkillable but resets you first")
  warn("/antifling     - Immunity against Fling Exploits")
  warn("/unantifling   - Removes Fling Immunity")
+ warn("/sit           - Forces you to Sit") 
  warn("")
  warn("")
  elseif cmd == "/credits" then
