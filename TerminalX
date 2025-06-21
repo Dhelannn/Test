@@ -1,6 +1,9 @@
-local g = (typeof(getgenv) == "function" and getgenv()) or _G
-if g.TerminalX_LOADED and g.TerminalX_Debug ~= true then return end
-g.TerminalX_LOADED = true
+ local g = typeof(getgenv) == "function" and getgenv() or _G
+ g.TerminalX_LOADED = g.TerminalX_LOADED or false
+ g.TerminalX_Debug = g.TerminalX_Debug or false
+
+ if g.TerminalX_LOADED and not g.TerminalX_Debug then return end
+ g.TerminalX_LOADED = true
 
  if typeof(task) ~= "table" or not task.wait then
  task = {}
