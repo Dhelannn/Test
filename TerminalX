@@ -1,3 +1,16 @@
+local function catchErr(func)
+local success, err = pcall(func)
+if not success then
+pcall(function()
+game.StarterGui:SetCore("SendNotification", {
+Title = "[TerminalX]",
+Text = "Script is Broken. Wait for Dhelan to fix it.",
+Duration = 8
+})
+end)
+end
+end
+catchErr(function()
 if _G.__TerminalX_Executed then return end
 _G.__TerminalX_Executed = true
 
@@ -297,3 +310,4 @@ nukeUIs(game:GetService("StarterGui"))
 warn("[TerminalX]")
 warn("Type /cmds to see all Built-In Commands.")
 warn("Or put a Script or Code in the Command Bar and press enter to Execute it.")
+end)
