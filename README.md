@@ -18,14 +18,18 @@
 - **/credits**
 - **/rejoin**
 - **/serverhop**
+- **/godmode**
+- **/antifling**
+- **/unantifling**
+- **/sit**
+- **/lay**
+- **/tp**
 
 **💾 Changelog | June 21, 2025**
 
-- New **"/reset"** Command
-- New **"/credits"** Command
-- New **"/rejoin"** Command
-- New **"/serverhop"** Command
-- New **"/tp"** Command
+- New **"Commands"**
+- Updated **"Credits"** Command
+- Updated **"Cmds"** Command
 
 **👑 Credits**
 + **Dhelan**       - Owner & Developer
