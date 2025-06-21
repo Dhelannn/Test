@@ -54,9 +54,13 @@
 	/sit         - Forces you to Sit
  
 	/lay         - Makes you lay down
-        /mfly        - Mobile Fly
-        /wasdfly     - WASD + QE Keys Fly
-        /unfly       - Disable Fly
+
+        /mfly        - Mobile Fly [Bugged]
+
+        /wasdfly     - WASD + QE Keys Fly [Bugged]
+
+        /goon        - Self Explanatory
+        /unfly       - Disable Fly [Broken]
 ```
 ```
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/heads/main/TerminalX"))()
