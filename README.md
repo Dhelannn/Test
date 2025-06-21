@@ -7,24 +7,6 @@
 
 - **BUT** here's the catch, You can't execute Require Scripts on it like the Real Command line, but you can **Execute Normal Scripts** on it
 
-**⚙️ Commands**
-
-- **/remotespy**
-- **/enable**
-- **/disable**
-- **/infinite yield**
-- **/dex**
-- **/reset**
-- **/credits**
-- **/rejoin**
-- **/serverhop**
-- **/godmode**
-- **/antifling**
-- **/unantifling**
-- **/sit**
-- **/lay**
-- **/tp**
-
 **💾 Changelog | June 21, 2025**
 
 - New **"Commands"**
@@ -36,6 +18,42 @@
 + **xlox262**      - Co-Owner & Idea Guy
 + **Owners of SSpy V3, IY and Dex** - I added their Scripts as Commands
 + **Kommander.IY** - The Script's Concept was Inspired by this IY Plugin
+
+```
+⚙️ Commands [16]
+
+  /enable        - Bring Executor UI Back
+  
+	/disable      - Hide Executor UI
+ 
+	/dex          - Dex Explorer
+ 
+	/infiniteyield - IY Admin
+ 
+	/remotespy     - SimpleSpy V3
+ 
+	/cmds         - Shows this List
+ 
+	/reset        - Force Reset
+ 
+	/credits      - Shows Credits
+ 
+	/serverhop     - Hops to Different Server
+ 
+	/rejoin       - Joins the Same Server
+ 
+	/tp [player]   - Teleports to the Selected Player
+ 
+	/godmode       - Makes you Unkillable
+ 
+	/antifling     - Immunity against Fling Exploits
+ 
+	/unantifling - Removes Fling Immunity
+ 
+	/sit         - Forces you to Sit
+ 
+	/lay         - Makes you lay down
+```
 ```
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/heads/main/TerminalX"))()
 ```
