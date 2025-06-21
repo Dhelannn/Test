@@ -5,9 +5,9 @@ Duration = 15
 })
 
 task.spawn(function()
-warn("[TerminalX] This is Loadstring is a Test Loadstring and doesn't do anything. The Main and Functional One is now copied to your clipboard")
+warn("[TerminalX] This Loadstring is a Test Loadstring and doesn't do anything. The Main and Functional One is now copied to your clipboard")
 
-local loadstringText = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/Test/refs/heads/main/TerminalX"))()'
+local loadstringText = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/Dhelannn/TerminalX/refs/heads/main/1.0"))()'
 
 if setclipboard then
 setclipboard(loadstringText)
