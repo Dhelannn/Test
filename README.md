@@ -22,7 +22,7 @@
 ```
 ⚙️ Commands [16]
 
-  /enable        - Bring Executor UI Back
+        /enable        - Bring Executor UI Back
   
 	/disable      - Hide Executor UI
  
