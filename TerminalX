@@ -445,29 +445,29 @@ input.FocusLost:Connect(function(enter)
     layout.Padding = UDim.new(0, 3)
 
     local commands = {
-        "/enable        - Bring Executor UI Back",
-        "/disable       - Hide Executor UI",
-        "/dex           - Dex Explorer",
-        "/infiniteyield - IY Admin",
-        "/remotespy     - SimpleSpy V3",
-        "/cmds          - Shows this List",
-        "/reset         - Force Reset",
-        "/credits       - Shows Credits",
-        "/serverhop     - Hops to Different Server",
-        "/rejoin        - Joins the Same Server",
-        "/tp [player]   - Teleports to the Selected Player",
-        "/godmode       - Makes you Unkillable",
-        "/antifling     - Immunity against Fling Exploits",
-        "/unantifling   - Removes Fling Immunity",
-        "/sit           - Forces you to Sit",
-        "/lay           - Makes you lay down",
-        "/mfly          - Mobile Fly",
-        "/wasdfly       - WASD + QE Keys Fly",
-        "/unfly         - Disable Fly",
-        "/goon          - Self Explanatory"), 
-        "Note: All Fly and Unfly Commands are", 
-        "Buggy/Broken I will fix maybe Tommorow", 
-    }
+    local cmds = {
+"/enable        - Bring Executor UI Back",
+"/disable       - Hide Executor UI",
+"/dex           - Dex Explorer",
+"/infiniteyield - IY Admin",
+"/remotespy     - SimpleSpy V3",
+"/cmds          - Shows this List",
+"/reset         - Force Reset",
+"/credits       - Shows Credits",
+"/serverhop     - Hops to Different Server",
+"/rejoin        - Joins the Same Server",
+"/tp [player]   - Teleports to the Selected Player",
+"/godmode       - Makes you Unkillable",
+"/antifling     - Immunity against Fling Exploits",
+"/unantifling   - Removes Fling Immunity",
+"/sit           - Forces you to Sit",
+"/lay           - Makes you Lay Down",
+"/mfly          - Mobile Fly",
+"/wasdfly       - WASD + QE Keys Fly",
+"/unfly         - Disable Fly",
+"/goon          - Self Explanatory",
+"Note: All Fly and Unfly Commands are Buggy/Broken. I will fix maybe tomorrow"
+}
 
     for _, text in ipairs(commands) do
         local label = Instance.new("TextLabel", list)
