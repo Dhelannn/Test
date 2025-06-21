@@ -462,6 +462,8 @@ input.FocusLost:Connect(function(enter)
         "/mfly          - Mobile Fly",
         "/wasdfly       - WASD + QE Keys Fly",
         "/unfly         - Disable Fly",
+        "Note: All Fly and Unfly Commands are", 
+        "Buggy/Broken I will fix maybe Tommorow", 
     }
 
     for _, text in ipairs(commands) do
@@ -565,5 +567,5 @@ nukeUIs(game:GetService("CoreGui"))
 nukeUIs(plr:WaitForChild("PlayerGui"))
 nukeUIs(game:GetService("StarterGui"))
 warn("[TerminalX]")
-warn("Put a Script or Command in the Command Bar and press enter to Execute it.")
+warn("Put a Script or Built-In Command in the Command Bar and press enter to Execute it.")
 warn("💡 TIP: Type /cmds to see all Built-In Commands.")
