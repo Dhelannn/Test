@@ -1,124 +1,276 @@
 if _G.__TerminalX_Executed then return end
 _G.__TerminalX_Executed = true
 
-if typeof(task)~="table"or not task.wait then task={};task.wait=wait;task.spawn=function(f)coroutine.wrap(f)()end end
+if typeof(task) ~= "table" or not task.wait then
+task = {}
+task.wait = wait
+task.spawn = function(f)
+coroutine.wrap(f)()
+end
+end
 
-local Players=game:GetService("Players")
-local plr=Players.LocalPlayer
+local Players = game:GetService("Players")
+local plr = Players.LocalPlayer
 
-game.StarterGui:SetCore("SendNotification",{Title="[TerminalX V1.5]",Text="Press F9 or type /console in chat.",Duration=15})
+game.StarterGui:SetCore("SendNotification", {
+Title = "[TerminalX V1.5]",
+Text = "Press F9 or type /console in chat.",
+Duration = 15
+})
 
 task.spawn(function()
 task.wait(0.2)
-local cg=game:GetService("CoreGui")
-local area=cg:FindFirstChild("RobloxGui")and cg.RobloxGui:FindFirstChild("NotificationArea")
+local cg = game:GetService("CoreGui")
+local area = cg:FindFirstChild("RobloxGui") and cg.RobloxGui:FindFirstChild("NotificationArea")
 if area then
-for _,v in pairs(area:GetChildren())do
-if v:IsA("Frame")and v.BackgroundColor3~=Color3.new(1,1,1)then
-v.BackgroundColor3=Color3.fromRGB(45,44,45)
-Instance.new("UICorner",v).CornerRadius=UDim.new(0,8)
+for _, v in pairs(area:GetChildren()) do
+if v:IsA("Frame") and v.BackgroundColor3 ~= Color3.new(1, 1, 1) then
+v.BackgroundColor3 = Color3.fromRGB(45, 44, 45)
+Instance.new("UICorner", v).CornerRadius = UDim.new(0, 8)
 end
 end
 end
 end)
 
-local bar=Instance.new("Frame")
-bar.Name="idk"
-bar.BackgroundColor3=Color3.fromRGB(45,45,45)
-bar.BorderColor3=Color3.fromRGB(184,184,184)
-bar.Position=UDim2.new(0,0,1,-30)
-bar.Size=UDim2.new(1,0,0,30)
+local bar = Instance.new("Frame")
+bar.Name = "idk"
+bar.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+bar.BorderColor3 = Color3.fromRGB(184, 184, 184)
+bar.Position = UDim2.new(0, 0, 1, -30)
+bar.Size = UDim2.new(1, 0, 0, 30)
 
-local inpWrap=Instance.new("Frame")
-inpWrap.Name="InputField"
-inpWrap.BackgroundTransparency=1
-inpWrap.ClipsDescendants=true
-inpWrap.Position=UDim2.new(0,30,0,0)
-inpWrap.Size=UDim2.new(1,-30,0,30)
-inpWrap.Parent=bar
+local inpWrap = Instance.new("Frame")
+inpWrap.Name = "InputField"
+inpWrap.BackgroundTransparency = 1
+inpWrap.ClipsDescendants = true
+inpWrap.Position = UDim2.new(0, 30, 0, 0)
+inpWrap.Size = UDim2.new(1, -30, 0, 30)
+inpWrap.Parent = bar
 
-local input=Instance.new("TextBox")
-input.Name="TextBox"
-input.ClearTextOnFocus=false
-input.Font=Enum.Font.Code
-input.PlaceholderText="Command Bar"
-input.Text=""
-input.TextColor3=Color3.new(1,1,1)
-input.TextSize=15
-input.TextXAlignment=Enum.TextXAlignment.Left
-input.BackgroundTransparency=1
-input.Size=UDim2.new(1,0,1,0)
-input.Parent=inpWrap
+local input = Instance.new("TextBox")
+input.Name = "TextBox"
+input.ClearTextOnFocus = false
+input.Font = Enum.Font.Code
+input.PlaceholderText = "Command Bar"
+input.Text = ""
+input.TextColor3 = Color3.new(1, 1, 1)
+input.TextSize = 15
+input.TextXAlignment = Enum.TextXAlignment.Left
+input.BackgroundTransparency = 1
+input.Size = UDim2.new(1, 0, 1, 0)
+input.Parent = inpWrap
 
-local arrow=Instance.new("TextLabel")
-arrow.Name="Arrow"
-arrow.Font=Enum.Font.Code
-arrow.Text="> "
-arrow.TextColor3=Color3.new(1,1,1)
-arrow.TextSize=15
-arrow.TextXAlignment=Enum.TextXAlignment.Right
-arrow.BackgroundTransparency=1
-arrow.Size=UDim2.new(0,30,1,0)
-arrow.Parent=bar
+local arrow = Instance.new("TextLabel")
+arrow.Name = "Arrow"
+arrow.Font = Enum.Font.Code
+arrow.Text = "> "
+arrow.TextColor3 = Color3.new(1, 1, 1)
+arrow.TextSize = 15
+arrow.TextXAlignment = Enum.TextXAlignment.Right
+arrow.BackgroundTransparency = 1
+arrow.Size = UDim2.new(0, 30, 1, 0)
+arrow.Parent = bar
 
-local rs=game:GetService("ReplicatedStorage")
-local folder=rs:FindFirstChild("storageshit")or Instance.new("Folder",rs)
-folder.Name="storageshit"
+local rs = game:GetService("ReplicatedStorage")
+local folder = rs:FindFirstChild("storageshit") or Instance.new("Folder", rs)
+folder.Name = "storageshit"
 folder:ClearAllChildren()
-bar.Parent=folder
+bar.Parent = folder
 
-local function reset()bar.Parent=folder input.Text=""end
+local function reset()
+bar.Parent = folder
+input.Text = ""
+end
 
-local trash={}
-local exec=getgenv().identifyexecutor and getgenv().identifyexecutor()or"RobloxClientApp"
-local key=exec:lower():gsub("[^%a]",""):sub(1,4)
+local trash = {}
+local exec = getgenv().identifyexecutor and getgenv().identifyexecutor() or "RobloxClientApp"
+local key = exec:lower():gsub("[^%a]", ""):sub(1, 4)
 
-local function nukeUIs(p)for _,o in pairs(p:GetDescendants())do local n=o.Name:lower()if n:find(key)then if o:IsA("ModuleScript")and not o.Disabled then table.insert(trash,{o,"ModuleScript"})o.Disabled=true elseif o:IsA("ScreenGui")and o.Enabled then table.insert(trash,{o,"ScreenGui"})o.Enabled=false elseif o:IsA("GuiObject")and o.Visible then table.insert(trash,{o,"GuiObject"})o.Visible=false end end end end
+local function nukeUIs(p)
+for _, o in pairs(p:GetDescendants()) do
+local n = o.Name:lower()
+if n:find(key) then
+if o:IsA("ModuleScript") and not o.Disabled then
+table.insert(trash, { o, "ModuleScript" })
+o.Disabled = true
+end
+if o:IsA("ScreenGui") and o.Enabled then
+table.insert(trash, { o, "ScreenGui" })
+o.Enabled = false
+end
+if o:IsA("GuiObject") and o.Visible then
+table.insert(trash, { o, "GuiObject" })
+o.Visible = false
+end
+end
+end
+end
 
-local function bringBack()for _,d in pairs(trash)do if d[2]=="ModuleScript"then d[1].Disabled=false end if d[2]=="ScreenGui"then d[1].Enabled=true end if d[2]=="GuiObject"then d[1].Visible=true end end end
+local function bringBack()
+for _, d in pairs(trash) do
+if d[2] == "ModuleScript" then d[1].Disabled = false end
+if d[2] == "ScreenGui" then d[1].Enabled = true end
+if d[2] == "GuiObject" then d[1].Visible = true end
+end
+end
 
-local function hideShit()trash={}nukeUIs(game:GetService("CoreGui"))nukeUIs(plr:WaitForChild("PlayerGui"))nukeUIs(game:GetService("StarterGui"))end
+local function hideShit()
+trash = {}
+nukeUIs(game:GetService("CoreGui"))
+nukeUIs(plr:WaitForChild("PlayerGui"))
+nukeUIs(game:GetService("StarterGui"))
+end
 
-local function fetch(url)local s,r=pcall(function()return game:HttpGet(url)end)if s and r then pcall(function()loadstring(r)()end)end end
+local function fetch(url)
+local s, r = pcall(function()
+return game:HttpGet(url)
+end)
+if s and r then
+pcall(function()
+loadstring(r)()
+end)
+end
+end
 
 input.FocusLost:Connect(function(enter)
 if not enter then return end
-local txt=input.Text
-if txt==""then return end
-if txt:lower():find("require%s*%(")then input.Text="" return end
+local txt = input.Text
+if txt == "" then return end
+if txt:lower():find("require%s*%(") then input.Text = "" return end
+local cmd = txt:lower()
+local args = {}
+for word in txt:gmatch("%S+") do table.insert(args, word) end
 
-local cmd=txt:lower()
-local args={}
-for word in txt:gmatch("%S+")do table.insert(args,word)end
-
-if cmd=="/enable"then bringBack()
-elseif cmd=="/disable"then hideShit()
-elseif cmd=="/remotespy"then fetch("https://raw.githubusercontent.com/78n/SimpleSpy/refs/heads/main/SimpleSpySource.lua")
-elseif cmd=="/infiniteyield"then fetch("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source.lua")
-elseif cmd=="/dex"then fetch("https://raw.githubusercontent.com/peyton2465/Dex/master/out.lua")
-elseif cmd=="/reset"then local lp=game:GetService("Players").LocalPlayer local char=lp.Character or lp.CharacterAdded:Wait()char:BreakJoints()
-elseif cmd=="/rejoin"then local ts=game:GetService("TeleportService")local lp=Players.LocalPlayer ts:TeleportToPlaceInstance(game.PlaceId,game.JobId,lp)
-elseif cmd=="/serverhop"then local ts=game:GetService("TeleportService")local id=game.PlaceId local sid=game.JobId local s=game:HttpGet("https://games.roblox.com/v1/games/"..id.."/servers/Public?limit=100")for _,v in pairs(game:GetService("HttpService"):JSONDecode(s).data)do if v.playing<v.maxPlayers and v.id~=sid then ts:TeleportToPlaceInstance(id,v.id,plr)break end end
-elseif cmd:match("^/tp")then local targetName=args[2] if targetName then local function findTarget(name)name=name:lower()for _,p in ipairs(Players:GetPlayers())do if p~=plr then local uname=p.Name:lower()local dname=p.DisplayName:lower()if uname:find(name)or dname:find(name)then return p end end end return nil end local target=findTarget(targetName)if target and target.Character and target.Character:FindFirstChild("HumanoidRootPart")then local hrp=plr.Character and plr.Character:FindFirstChild("HumanoidRootPart")if hrp then hrp.CFrame=target.Character.HumanoidRootPart.CFrame+Vector3.new(0,3,0)end end end
-elseif cmd=="/antifling"then local char=plr.Character if char then for _,v in pairs(char:GetDescendants())do if v:IsA("BasePart")and v.Name~="HumanoidRootPart"then v.CustomPhysicalProperties=PhysicalProperties.new(0,0,0)end end game.StarterGui:SetCore("SendNotification",{Title="[TerminalX]",Text="Anti-fling enabled.",Duration=5})end
-elseif cmd=="/unantifling"then local char=plr.Character if char then for _,v in pairs(char:GetDescendants())do if v:IsA("BasePart")and v.Name~="HumanoidRootPart"then v.CustomPhysicalProperties=PhysicalProperties.new(1,0.3,0.5)end end game.StarterGui:SetCore("SendNotification",{Title="[TerminalX]",Text="Anti-fling disabled,Protected against Exploiters",Duration=5})end
-elseif cmd=="/godmode"then local char=plr.Character if char then for _,v in pairs(char:GetDescendants())do if v:IsA("BasePart")then v.Anchored=false v.CanCollide=true v.Massless=false end end char:BreakJoints() game.StarterGui:SetCore("SendNotification",{Title="[TerminalX]",Text="Godmode Enabled,Rejoin to Disable",Duration=5})end
-elseif cmd=="/cmds"then fetch("https://raw.githubusercontent.com/Dhelannn/idk/main/Commands.lua")
-elseif cmd=="/credits"then warn("👑 Credits")warn("Dhelan - Owner & Developer")warn("xlox262 - Co--Owner & Idea Guy")warn("Kommander.IY - Concept Inspiration")
-else local success,func=pcall(function()return loadstring(txt)end)if success and typeof(func)=="function"then pcall(func)end end
-input.Text=""
+if cmd == "/enable" then
+bringBack()
+elseif cmd == "/disable" then
+hideShit()
+elseif cmd == "/remotespy" then
+fetch("https://raw.githubusercontent.com/78n/SimpleSpy/refs/heads/main/SimpleSpySource.lua")
+elseif cmd == "/infiniteyield" then
+fetch("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source.lua")
+elseif cmd == "/dex" then
+fetch("https://raw.githubusercontent.com/peyton2465/Dex/master/out.lua")
+elseif cmd == "/reset" then
+local lp = game:GetService("Players").LocalPlayer
+local char = lp.Character or lp.CharacterAdded:Wait()
+char:BreakJoints()
+elseif cmd == "/rejoin" then
+local ts = game:GetService("TeleportService")
+local lp = Players.LocalPlayer
+ts:TeleportToPlaceInstance(game.PlaceId, game.JobId, lp)
+elseif cmd == "/serverhop" then
+local ts = game:GetService("TeleportService")
+local id = game.PlaceId
+local sid = game.JobId
+local s = game:HttpGet("https://games.roblox.com/v1/games/"..id.."/servers/Public?limit=100")
+for _, v in pairs(game:GetService("HttpService"):JSONDecode(s).data) do
+if v.playing < v.maxPlayers and v.id ~= sid then
+ts:TeleportToPlaceInstance(id, v.id, plr)
+break
+end
+end
+elseif cmd:match("^/tp") then
+local targetName = args[2]
+if targetName then
+local function findTarget(name)
+name = name:lower()
+for _, p in ipairs(Players:GetPlayers()) do
+if p ~= plr then
+local uname = p.Name:lower()
+local dname = p.DisplayName:lower()
+if uname:find(name) or dname:find(name) then
+return p
+end
+end
+end
+return nil
+end
+local target = findTarget(targetName)
+if target and target.Character and target.Character:FindFirstChild("HumanoidRootPart") then
+local hrp = plr.Character and plr.Character:FindFirstChild("HumanoidRootPart")
+if hrp then
+hrp.CFrame = target.Character.HumanoidRootPart.CFrame + Vector3.new(0, 3, 0)
+end
+end
+end
+elseif cmd == "/antifling" then
+local char = plr.Character
+if char then
+for _, v in pairs(char:GetDescendants()) do
+if v:IsA("BasePart") and v.Name ~= "HumanoidRootPart" then
+v.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0)
+end
+end
+game.StarterGui:SetCore("SendNotification", {
+Title = "[TerminalX]",
+Text = "Anti-fling enabled.",
+Duration = 5
+})
+end
+elseif cmd == "/unantifling" then
+local char = plr.Character
+if char then
+for _, v in pairs(char:GetDescendants()) do
+if v:IsA("BasePart") and v.Name ~= "HumanoidRootPart" then
+v.CustomPhysicalProperties = PhysicalProperties.new(1, 0.3, 0.5)
+end
+end
+game.StarterGui:SetCore("SendNotification", {
+Title = "[TerminalX]",
+Text = "Anti-fling disabled,Protected against Exploiters",
+Duration = 5
+})
+end
+elseif cmd == "/godmode" then
+local char = plr.Character
+if char then
+for _, v in pairs(char:GetDescendants()) do
+if v:IsA("BasePart") then
+v.Anchored = false
+v.CanCollide = true
+v.Massless = false
+end
+end
+char:BreakJoints()
+game.StarterGui:SetCore("SendNotification", {
+Title = "[TerminalX]",
+Text = "Godmode Enabled,Rejoin to Disable",
+Duration = 5
+})
+end
+elseif cmd == "/cmds" then
+fetch("https://raw.githubusercontent.com/Dhelannn/idk/main/Commands.lua")
+elseif cmd == "/credits" then
+warn("👑 Credits")
+warn("Dhelan - Owner & Developer")
+warn("xlox262 - Co--Owner & Idea Guy")
+warn("Kommander.IY - Concept Inspiration")
+else
+local success, func = pcall(function()
+return loadstring(txt)
+end)
+if success and typeof(func) == "function" then
+pcall(func)
+end
+end
+input.Text = ""
 end)
 
 task.spawn(function()
 while true do
 task.wait(0.5)
-local core=game:GetService("CoreGui")
-local dev=core:FindFirstChild("DevConsoleMaster")
-local win=dev and dev:FindFirstChild("DevConsoleWindow")
-local ui=win and win:FindFirstChild("DevConsoleUI")
+local core = game:GetService("CoreGui")
+local dev = core:FindFirstChild("DevConsoleMaster")
+local win = dev and dev:FindFirstChild("DevConsoleWindow")
+local ui = win and win:FindFirstChild("DevConsoleUI")
 if win and ui and win.Visible then
-if bar.Parent~=win then bar.Parent=win end
-else reset()end
+if bar.Parent ~= win then
+bar.Parent = win
+end
+else
+reset()
+end
 end
 end)
 
