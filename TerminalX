@@ -291,30 +291,129 @@ getgenv().TerminalX_LOADED = true
  })
  end
  elseif cmd == "/cmds" then
- warn("[TerminalX] Commands: (16)")
- warn("/enable        - Bring Executor UI Back")
- warn("/disable       - Hide Executor UI")
- warn("/dex           - Dex Explorer")
- warn("/infiniteyield - IY Admin")
- warn("/remotespy     - SimpleSpy V3")
- warn("/cmds          - Shows this List")
- warn("/reset         - Force Reset")
- warn("/credits       - Shows Credits")
- warn("/serverhop     - Hops to Different Server")
- warn("/rejoin        - Joins the Same Server")
- warn("/tp [player]   - Teleports to the Selected Player")
- warn("/godmode       - Makes you Unkillable but resets you first")
- warn("/antifling     - Immunity against Fling Exploits")
- warn("/unantifling   - Removes Fling Immunity")
- warn("/sit           - Forces you to Sit") 
- warn("/lay           - Makes you lay down") 
- warn("")
- warn("")
- elseif cmd == "/credits" then
- warn("👑 Credits")
- warn("Dhelan - Owner & Developer")
- warn("xlox262 - Co--Owner & Idea Guy")
- warn("Kommander.IY - Concept Inspiration")
+ local plr = game.Players.LocalPlayer
+ local gui = Instance.new("ScreenGui", plr:WaitForChild("PlayerGui"))
+ gui.Name = "Cmds"
+ gui.ResetOnSpawn = false
+
+local frame = Instance.new("Frame", gui)
+frame.Size = UDim2.new(0, 320, 0, 300)
+frame.Position = UDim2.new(0.02, 0, 0.25, 0)
+frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+frame.BorderSizePixel = 0
+frame.BackgroundTransparency = 0.15
+frame.Active = true
+frame.Draggable = true
+
+local title = Instance.new("TextLabel", frame)
+title.Size = UDim2.new(1, 0, 0, 30)
+title.Position = UDim2.new(0, 0, 0, 0)
+title.Text = "TerminalX Commands"
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+title.Font = Enum.Font.GothamBold
+title.TextSize = 16
+title.BorderSizePixel = 0
+
+local list = Instance.new("ScrollingFrame", frame)
+list.Size = UDim2.new(1, 0, 1, -30)
+list.Position = UDim2.new(0, 0, 0, 30)
+list.CanvasSize = UDim2.new(0, 0, 0, 0)
+list.ScrollBarThickness = 4
+list.BackgroundTransparency = 1
+list.BorderSizePixel = 0
+
+local layout = Instance.new("UIListLayout", list)
+layout.SortOrder = Enum.SortOrder.LayoutOrder
+layout.Padding = UDim.new(0, 3)
+
+local commands = {
+	"/enable        - Bring Executor UI Back",
+	"/disable       - Hide Executor UI",
+	"/dex           - Dex Explorer",
+	"/infiniteyield - IY Admin",
+	"/remotespy     - SimpleSpy V3",
+	"/cmds          - Shows this List",
+	"/reset         - Force Reset",
+	"/credits       - Shows Credits",
+	"/serverhop     - Hops to Different Server",
+	"/rejoin        - Joins the Same Server",
+	"/tp [player]   - Teleports to the Selected Player",
+	"/godmode       - Makes you Unkillable",
+	"/antifling     - Immunity against Fling Exploits",
+	"/unantifling   - Removes Fling Immunity",
+	"/sit           - Forces you to Sit",
+	"/lay           - Makes you lay down",
+}
+
+for _, text in ipairs(commands) do
+local label = Instance.new("TextLabel", list)
+label.Size = UDim2.new(1, -10, 0, 25)
+label.Text = text
+label.TextColor3 = Color3.fromRGB(255, 255, 255)
+label.BackgroundTransparency = 1
+label.Font = Enum.Font.Gotham
+label.TextSize = 14
+end
+
+task.defer(function()
+list.CanvasSize = UDim2.new(0, 0, 0, layout.AbsoluteContentSize.Y + 5)
+end)
+elseif cmd == "/credits" then
+local plr = game.Players.LocalPlayer
+local gui = Instance.new("ScreenGui", plr:WaitForChild("PlayerGui"))
+gui.Name = "Cmds"
+gui.ResetOnSpawn = false
+
+local frame = Instance.new("Frame", gui)
+frame.Size = UDim2.new(0, 350, 0, 200)
+frame.Position = UDim2.new(0.02, 0, 0.25, 0)
+frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+frame.BorderSizePixel = 0
+frame.BackgroundTransparency = 0.15
+frame.Active = true
+frame.Draggable = true
+
+local title = Instance.new("TextLabel", frame)
+title.Size = UDim2.new(1, 0, 0, 30)
+title.Position = UDim2.new(0, 0, 0, 0)
+title.Text = "📄 Credits"
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+title.Font = Enum.Font.GothamBold
+title.TextSize = 16
+title.BorderSizePixel = 0
+
+local list = Instance.new("ScrollingFrame", frame)
+list.Size = UDim2.new(1, 0, 1, -30)
+list.Position = UDim2.new(0, 0, 0, 30)
+list.CanvasSize = UDim2.new(0, 0, 0, 0)
+list.ScrollBarThickness = 4
+list.BackgroundTransparency = 1
+list.BorderSizePixel = 0
+
+local layout = Instance.new("UIListLayout", list)
+layout.SortOrder = Enum.SortOrder.LayoutOrder
+layout.Padding = UDim.new(0, 3)
+
+local commands = {
+"Owner & Developer - Dhelan"
+"Co-Owner & Idea Guy - xlox262"
+}
+
+ for _, text in ipairs(commands) do
+ local label = Instance.new("TextLabel", list)
+ label.Size = UDim2.new(1, -10, 0, 25)
+ label.Text = text
+ label.TextColor3 = Color3.fromRGB(255, 255, 255)
+ label.BackgroundTransparency = 1
+ label.Font = Enum.Font.Gotham
+ label.TextSize = 14
+ end
+
+ task.defer(function()
+ list.CanvasSize = UDim2.new(0, 0, 0, layout.AbsoluteContentSize.Y + 5)
+ end)
  else
  local success, func = pcall(function()
  return loadstring(txt)
