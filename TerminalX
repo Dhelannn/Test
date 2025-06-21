@@ -1,5 +1,5 @@
-if _G.__TerminalX_Executed then return end
- _G.__TerminalX_Executed = true
+if getgenv().TerminalX_LOADED and _G.TerminalX_Debug ~= true then return end
+getgenv().TerminalX_LOADED = true
 
  if typeof(task) ~= "table" or not task.wait then
   task = {}
