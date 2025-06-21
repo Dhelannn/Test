@@ -200,7 +200,53 @@ input.FocusLost:Connect(function(enter)
 				end
 			end
 		end
-	elseif cmd == "/cmds" then
+	elseif cmd == "/antifling" then
+	local char = plr.Character
+	if char then
+	for _,v in pairs(char:GetDescendants()) do
+	if v:IsA("BasePart") and v.Name ~= "HumanoidRootPart" then
+	v.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0)
+		end
+		end
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "[TerminalX]",
+			Text = "Anti-fling enabled.",
+			Duration = 5
+		        })
+	                end
+
+        elseif cmd == "/unantifling" then
+	local char = plr.Character
+	if char then
+		for _,v in pairs(char:GetDescendants()) do
+			if v:IsA("BasePart") and v.Name ~= "HumanoidRootPart" then
+				v.CustomPhysicalProperties = PhysicalProperties.new(1, 0.3, 0.5)
+			end
+		end
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "[TerminalX]",
+			Text = "Anti-fling disabled.",
+			Duration = 5
+		        })
+	                end
+        elseif cmd == "/godmode" then
+	local char = plr.Character
+	if char then
+        for _,v in pairs(char:GetDescendants()) do
+        if v:IsA("BasePart") then
+	v.Anchored = false
+	v.CanCollide = true
+	v.Massless = false
+			end
+		        end
+		char:BreakJoints()
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "[TerminalX]",
+			Text = "Godmode Enabled",
+			Duration = 5
+                        })
+	                end
+        elseif cmd == "/cmds" then
 		fetch("https://raw.githubusercontent.com/Dhelannn/idk/refs/heads/main/Commands") 
 
                 elseif cmd == "/credits" then
