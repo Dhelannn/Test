@@ -517,7 +517,7 @@ end
 task.defer(function()
 list.CanvasSize = UDim2.new(0, 0, 0, layout.AbsoluteContentSize.Y + 5)
 end)
-if cmd == "/credits" then
+else cmd == "/credits" then
 local plr = game.Players.LocalPlayer
 local gui = Instance.new("ScreenGui", plr:WaitForChild("PlayerGui"))
 gui.Name = "Cmds"
