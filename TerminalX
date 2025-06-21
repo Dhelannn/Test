@@ -146,6 +146,11 @@ if g.TerminalX_LOADED and not g.TerminalX_Debug then return end
  table.insert(args, word)
  end
 
+if cmd:find("require%s*%(") then
+input.Text = ""
+return
+end
+
 elseif cmd == "/wasdfly" then
 local FLYING = false
 local SPEED = 1
