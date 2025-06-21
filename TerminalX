@@ -206,7 +206,7 @@ input.FocusLost:Connect(function(enter)
                 elseif cmd == "/credits" then
 		warn("👑 Credits")
 		warn("Dhelan         - Owner & Developer")
-		warn("xlox262        - Bestest Friend & Idea Guy") 
+		warn("xlox262        - Co--Owner & Idea Guy") 
 		warn("Kommander.IY   - Concept Inspiration")
                 warn("") 
                 warn("")
