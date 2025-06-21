@@ -12,6 +12,7 @@
 - New **"Commands"**
 - Updated **"Credits"** Command
 - Updated **"Cmds"** Command
+- Patched Some Bugs
 
 **👑 Credits**
 + **Dhelan**       - Owner & Developer
