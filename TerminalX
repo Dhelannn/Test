@@ -245,70 +245,24 @@ input.FocusLost:Connect(function(enter)
 			Duration = 5
                         })
 	                end
-                elseif cmd== "/fly" then
-         elseif cmd:match("^/fly") then
-	local speed = tonumber(args[2]) or 5
-	local uis = game:GetService("UserInputService")
-	local run = game:GetService("RunService")
-	local hrp = plr.Character and plr.Character:FindFirstChild("HumanoidRootPart")
+                elseif cmd:match("^/fly") then
+	local speed = tonumber(args[2]) or 10
+	local char = plr.Character
+	if not char then return end
+
+	local hrp = char:FindFirstChild("HumanoidRootPart")
 	if not hrp then return end
 
-	local flying = true
 	local bv = Instance.new("BodyVelocity")
+	bv.Name = "TerminalX_Fly"
 	bv.MaxForce = Vector3.new(1, 1, 1) * 1e9
-	bv.Velocity = Vector3.zero
+	bv.Velocity = Vector3.new(0, speed, 0)
 	bv.Parent = hrp
-
-	local dirs = {W=false, A=false, S=false, D=false, Space=false, Shift=false}
-	local cam = workspace.CurrentCamera
-
-	local function getMoveVec()
-		local cf = cam.CFrame
-		local moveVec = Vector3.zero
-		if dirs.W then moveVec += cf.LookVector end
-		if dirs.S then moveVec -= cf.LookVector end
-		if dirs.A then moveVec -= cf.RightVector end
-		if dirs.D then moveVec += cf.RightVector end
-		if dirs.Space then moveVec += Vector3.new(0,1,0) end
-		if dirs.Shift then moveVec -= Vector3.new(0,1,0) end
-		return moveVec.Unit
-	end
-
-	local inputConn = uis.InputBegan:Connect(function(i, g)
-		if g then return end
-		if i.KeyCode == Enum.KeyCode.W then dirs.W = true end
-		if i.KeyCode == Enum.KeyCode.S then dirs.S = true end
-		if i.KeyCode == Enum.KeyCode.A then dirs.A = true end
-		if i.KeyCode == Enum.KeyCode.D then dirs.D = true end
-		if i.KeyCode == Enum.KeyCode.Space then dirs.Space = true end
-		if i.KeyCode == Enum.KeyCode.LeftShift then dirs.Shift = true end
-	end)
-
-	local endConn = uis.InputEnded:Connect(function(i, g)
-		if g then return end
-		if i.KeyCode == Enum.KeyCode.W then dirs.W = false end
-		if i.KeyCode == Enum.KeyCode.S then dirs.S = false end
-		if i.KeyCode == Enum.KeyCode.A then dirs.A = false end
-		if i.KeyCode == Enum.KeyCode.D then dirs.D = false end
-		if i.KeyCode == Enum.KeyCode.Space then dirs.Space = false end
-		if i.KeyCode == Enum.KeyCode.LeftShift then dirs.Shift = false end
-	end)
-
-	local flyLoop
-	flyLoop = run.RenderStepped:Connect(function()
-		if not flying or not hrp then flyLoop:Disconnect() return end
-		local mv = getMoveVec()
-		if mv.Magnitude > 0 then
-			bv.Velocity = mv * speed
-		else
-			bv.Velocity = Vector3.zero
-		end
-	end)
 
 	game.StarterGui:SetCore("SendNotification", {
 		Title = "[TerminalX]",
-		Text = "Fly enabled at speed "..speed.." (WASD + Space/Shift)",
-		Duration = 6
+		Text = "Flying up at speed "..speed.." (Mobile mode)",
+		Duration = 5
 	})
                 elseif cmd == "/cmds" then
 		fetch("https://raw.githubusercontent.com/Dhelannn/idk/refs/heads/main/Commands") 
