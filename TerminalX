@@ -2,34 +2,34 @@ if getgenv().TerminalX_LOADED and _G.TerminalX_Debug ~= true then return end
 getgenv().TerminalX_LOADED = true
 
  if typeof(task) ~= "table" or not task.wait then
-  task = {}
-  task.wait = wait
-  task.spawn = function(f)
-   coroutine.wrap(f)()
-  end
+ task = {}
+ task.wait = wait
+ task.spawn = function(f)
+ coroutine.wrap(f)()
+ end
  end
 
  local Players = game:GetService("Players")
  local plr = Players.LocalPlayer
 
  game.StarterGui:SetCore("SendNotification", {
-  Title = "[TerminalX]",
-  Text = "Press F9 or type /console in chat.",
-  Duration = 15
+ Title = "[TerminalX]",
+ Text = "Press F9 or type /console in chat.",
+ Duration = 15
  })
 
  task.spawn(function()
-  task.wait(0.2)
-  local cg = game:GetService("CoreGui")
-  local area = cg:FindFirstChild("RobloxGui") and cg.RobloxGui:FindFirstChild("NotificationArea")
-  if area then
-   for _, v in pairs(area:GetChildren()) do
-    if v:IsA("Frame") and v.BackgroundColor3 ~= Color3.new(1, 1, 1) then
-     v.BackgroundColor3 = Color3.fromRGB(45, 44, 45)
-     Instance.new("UICorner", v).CornerRadius = UDim.new(0, 8)
-    end
-   end
-  end
+ task.wait(0.2)
+ local cg = game:GetService("CoreGui")
+ local area = cg:FindFirstChild("RobloxGui") and cg.RobloxGui:FindFirstChild("NotificationArea")
+ if area then
+ for _, v in pairs(area:GetChildren()) do
+ if v:IsA("Frame") and v.BackgroundColor3 ~= Color3.new(1, 1, 1) then
+ v.BackgroundColor3 = Color3.fromRGB(45, 44, 45)
+ Instance.new("UICorner", v).CornerRadius = UDim.new(0, 8)
+ end
+ end
+ end
  end)
 
  local bar = Instance.new("Frame")
@@ -78,8 +78,8 @@ getgenv().TerminalX_LOADED = true
  bar.Parent = folder
 
  local function reset()
-  bar.Parent = folder
-  input.Text = ""
+ bar.Parent = folder
+ input.Text = ""
  end
 
  local trash = {}
@@ -87,206 +87,206 @@ getgenv().TerminalX_LOADED = true
  local key = exec:lower():gsub("[^%a]", ""):sub(1, 4)
 
  local function nukeUIs(p)
-  for _, o in pairs(p:GetDescendants()) do
-   local n = o.Name:lower()
-   if n:find(key) then
-    if o:IsA("ModuleScript") and not o.Disabled then
-     table.insert(trash, { o, "ModuleScript" })
-     o.Disabled = true
-    end
-    if o:IsA("ScreenGui") and o.Enabled then
-     table.insert(trash, { o, "ScreenGui" })
-     o.Enabled = false
-    end
-    if o:IsA("GuiObject") and o.Visible then
-     table.insert(trash, { o, "GuiObject" })
-     o.Visible = false
-    end
-   end
-  end
+ for _, o in pairs(p:GetDescendants()) do
+ local n = o.Name:lower()
+ if n:find(key) then
+ if o:IsA("ModuleScript") and not o.Disabled then
+ table.insert(trash, { o, "ModuleScript" })
+ o.Disabled = true
+ end
+ if o:IsA("ScreenGui") and o.Enabled then
+ table.insert(trash, { o, "ScreenGui" })
+ o.Enabled = false
+ end
+ if o:IsA("GuiObject") and o.Visible then
+ table.insert(trash, { o, "GuiObject" })
+ o.Visible = false
+ end
+ end
+ end
  end
 
  local function bringBack()
-  for _, d in pairs(trash) do
-   if d[2] == "ModuleScript" then d[1].Disabled = false end
-   if d[2] == "ScreenGui" then d[1].Enabled = true end
-   if d[2] == "GuiObject" then d[1].Visible = true end
-  end
+ for _, d in pairs(trash) do
+ if d[2] == "ModuleScript" then d[1].Disabled = false end
+ if d[2] == "ScreenGui" then d[1].Enabled = true end
+ if d[2] == "GuiObject" then d[1].Visible = true end
+ end
  end
 
  local function hideShit()
-  trash = {}
-  nukeUIs(game:GetService("CoreGui"))
-  nukeUIs(plr:WaitForChild("PlayerGui"))
-  nukeUIs(game:GetService("StarterGui"))
+ trash = {}
+ nukeUIs(game:GetService("CoreGui"))
+ nukeUIs(plr:WaitForChild("PlayerGui"))
+ nukeUIs(game:GetService("StarterGui"))
  end
 
  local function fetch(url)
-  local s, r = pcall(function()
-   return game:HttpGet(url)
-  end)
-  if s and r then
-   pcall(function()
-    loadstring(r)()
-   end)
-  end
+ local s, r = pcall(function()
+ return game:HttpGet(url)
+ end)
+ if s and r then
+ pcall(function()
+ loadstring(r)()
+ end)
+ end
  end
 
  input.FocusLost:Connect(function(enter)
-  if not enter then return end
-  local txt = input.Text
-  if txt == "" then return end
-  if txt:lower():find("require%s*%(") then
-   input.Text = ""
-   return
-  end
+ if not enter then return end
+ local txt = input.Text
+ if txt == "" then return end
+ if txt:lower():find("require%s*%(") then
+ input.Text = ""
+ return
+ end
 
-  local cmd = txt:lower()
-  local args = {}
-  for word in txt:gmatch("%S+") do
-   table.insert(args, word)
-  end
+ local cmd = txt:lower()
+ local args = {}
+ for word in txt:gmatch("%S+") do
+ table.insert(args, word)
+ end
 
-  if cmd == "/enable" then
-   bringBack()
-  elseif cmd == "/disable" then
-   hideShit()
-  elseif cmd == "/remotespy" then
-   fetch("https://raw.githubusercontent.com/78n/SimpleSpy/refs/heads/main/SimpleSpySource.lua")
-  elseif cmd == "/infiniteyield" then
-   fetch("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source.lua")
-  elseif cmd == "/dex" then
-   fetch("https://raw.githubusercontent.com/peyton2465/Dex/master/out.lua")
-  elseif cmd == "/reset" then
-   local char = plr.Character or plr.CharacterAdded:Wait()
-   char:BreakJoints()
-  elseif cmd == "/rejoin" then
-   game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, plr)
-  elseif cmd == "/serverhop" then
-   local HttpService = game:GetService("HttpService")
-   local servers = game:HttpGet("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?limit=100")
-   for _, v in pairs(HttpService:JSONDecode(servers).data) do
-    if v.playing < v.maxPlayers and v.id ~= game.JobId then
-     game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, v.id, plr)
-     break
-    end
-   end
-  elseif cmd:match("^/tp") then
-   local targetName = args[2]
-   if targetName then
-    local function findTarget(name)
-     name = name:lower()
-     for _, p in ipairs(Players:GetPlayers()) do
-      if p ~= plr then
-       local uname = p.Name:lower()
-       local dname = p.DisplayName:lower()
-       if uname:find(name) or dname:find(name) then return p end
-      end
-     end
-     return nil
-    end
-    local target = findTarget(targetName)
-    if target and target.Character and target.Character:FindFirstChild("HumanoidRootPart") then
-     local hrp = plr.Character and plr.Character:FindFirstChild("HumanoidRootPart")
-     if hrp then
-      hrp.CFrame = target.Character.HumanoidRootPart.CFrame + Vector3.new(0, 3, 0)
-     end
-    end
-   end
-  elseif cmd == "/antifling" then
-   local char = plr.Character
-   if char then
-    for _, v in pairs(char:GetDescendants()) do
-     if v:IsA("BasePart") and v.Name ~= "HumanoidRootPart" then
-      v.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0)
-     end
-    end
-    game.StarterGui:SetCore("SendNotification", {
-     Title = "[TerminalX]",
-     Text = "Anti-fling enabled.",
-     Duration = 5
-    })
-   end
-  elseif cmd == "/unantifling" then
-   local char = plr.Character
-   if char then
-    for _, v in pairs(char:GetDescendants()) do
-     if v:IsA("BasePart") and v.Name ~= "HumanoidRootPart" then
-      v.CustomPhysicalProperties = PhysicalProperties.new(1, 0.3, 0.5)
-     end
-    end
-    game.StarterGui:SetCore("SendNotification", {
-     Title = "[TerminalX]",
-     Text = "Anti-fling disabled, Protected against Exploiters",
-     Duration = 5
-    })
-   end
-  elseif cmd == "/godmode" then
-   local char = plr.Character
-   if char then
-    for _, v in pairs(char:GetDescendants()) do
-     if v:IsA("BasePart") then
-      v.Anchored = false
-      v.CanCollide = true
-      v.Massless = false
-     end
-    end
-    char:BreakJoints()
-    game.StarterGui:SetCore("SendNotification", {
-     Title = "[TerminalX]",
-     Text = "Godmode Enabled, Rejoin to Disable",
-     Duration = 5
-    })
-   end
-  elseif cmd == "/cmds" then
-   warn("[TerminalX] Commands: (14)")
-   warn("/enable        - Bring Executor UI Back")
-   warn("/disable       - Hide Executor UI")
-   warn("/dex           - Dex Explorer")
-   warn("/infiniteyield - IY Admin")
-   warn("/remotespy     - SimpleSpy V3")
-   warn("/cmds          - Shows this List")
-   warn("/reset         - Force Reset")
-   warn("/credits       - Shows Credits")
-   warn("/serverhop     - Hops to Different Server")
-   warn("/rejoin        - Joins the Same Server")
-   warn("/tp [player]   - Teleports to the Selected Player")
-   warn("/godmode       - Makes you Unkillable but resets you first")
-   warn("/antifling     - Immunity against Fling Exploits")
-   warn("/unantifling   - Removes Fling Immunity")
-   warn("")
-   warn("")
-  elseif cmd == "/credits" then
-   warn("👑 Credits")
-   warn("Dhelan - Owner & Developer")
-   warn("xlox262 - Co--Owner & Idea Guy")
-   warn("Kommander.IY - Concept Inspiration")
-  else
-   local success, func = pcall(function()
-    return loadstring(txt)
-   end)
-   if success and typeof(func) == "function" then
-    pcall(func)
-   end
-  end
-  input.Text = ""
+ if cmd == "/enable" then
+ bringBack()
+ elseif cmd == "/disable" then
+ hideShit()
+ elseif cmd == "/remotespy" then
+ fetch("https://raw.githubusercontent.com/78n/SimpleSpy/refs/heads/main/SimpleSpySource.lua")
+ elseif cmd == "/infiniteyield" then
+ fetch("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source.lua")
+ elseif cmd == "/dex" then
+ fetch("https://raw.githubusercontent.com/peyton2465/Dex/master/out.lua")
+ elseif cmd == "/reset" then
+ local char = plr.Character or plr.CharacterAdded:Wait()
+ char:BreakJoints()
+ elseif cmd == "/rejoin" then
+ game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, plr)
+ elseif cmd == "/serverhop" then
+ local HttpService = game:GetService("HttpService")
+ local servers = game:HttpGet("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?limit=100")
+ for _, v in pairs(HttpService:JSONDecode(servers).data) do
+ if v.playing < v.maxPlayers and v.id ~= game.JobId then
+ game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, v.id, plr)
+ break
+ end
+ end
+ elseif cmd:match("^/tp") then
+ local targetName = args[2]
+ if targetName then
+ local function findTarget(name)
+ name = name:lower()
+ for _, p in ipairs(Players:GetPlayers()) do
+ if p ~= plr then
+ local uname = p.Name:lower()
+ local dname = p.DisplayName:lower()
+ if uname:find(name) or dname:find(name) then return p end
+ end
+ end
+ return nil
+ end
+ local target = findTarget(targetName)
+ if target and target.Character and target.Character:FindFirstChild("HumanoidRootPart") then
+ local hrp = plr.Character and plr.Character:FindFirstChild("HumanoidRootPart")
+ if hrp then
+ hrp.CFrame = target.Character.HumanoidRootPart.CFrame + Vector3.new(0, 3, 0)
+ end
+ end
+ end
+ elseif cmd == "/antifling" then
+ local char = plr.Character
+ if char then
+ for _, v in pairs(char:GetDescendants()) do
+ if v:IsA("BasePart") and v.Name ~= "HumanoidRootPart" then
+ v.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0)
+ end
+ end
+ game.StarterGui:SetCore("SendNotification", {
+ Title = "[TerminalX]",
+ Text = "Anti-fling enabled.",
+ Duration = 5
+ })
+ end
+ elseif cmd == "/unantifling" then
+ local char = plr.Character
+ if char then
+ for _, v in pairs(char:GetDescendants()) do
+ if v:IsA("BasePart") and v.Name ~= "HumanoidRootPart" then
+ v.CustomPhysicalProperties = PhysicalProperties.new(1, 0.3, 0.5)
+ end
+ end
+ game.StarterGui:SetCore("SendNotification", {
+ Title = "[TerminalX]",
+ Text = "Anti-fling disabled, Protected against Exploiters",
+ Duration = 5
+ })
+ end
+ elseif cmd == "/godmode" then
+ local char = plr.Character
+ if char then
+ for _, v in pairs(char:GetDescendants()) do
+ if v:IsA("BasePart") then
+ v.Anchored = false
+ v.CanCollide = true
+ v.Massless = false
+ end
+ end
+ char:BreakJoints()
+ game.StarterGui:SetCore("SendNotification", {
+ Title = "[TerminalX]",
+ Text = "Godmode Enabled, Rejoin to Disable",
+ Duration = 5
+ })
+ end
+ elseif cmd == "/cmds" then
+ warn("[TerminalX] Commands: (14)")
+ warn("/enable        - Bring Executor UI Back")
+ warn("/disable       - Hide Executor UI")
+ warn("/dex           - Dex Explorer")
+ warn("/infiniteyield - IY Admin")
+ warn("/remotespy     - SimpleSpy V3")
+ warn("/cmds          - Shows this List")
+ warn("/reset         - Force Reset")
+ warn("/credits       - Shows Credits")
+ warn("/serverhop     - Hops to Different Server")
+ warn("/rejoin        - Joins the Same Server")
+ warn("/tp [player]   - Teleports to the Selected Player")
+ warn("/godmode       - Makes you Unkillable but resets you first")
+ warn("/antifling     - Immunity against Fling Exploits")
+ warn("/unantifling   - Removes Fling Immunity")
+ warn("")
+ warn("")
+ elseif cmd == "/credits" then
+ warn("👑 Credits")
+ warn("Dhelan - Owner & Developer")
+ warn("xlox262 - Co--Owner & Idea Guy")
+ warn("Kommander.IY - Concept Inspiration")
+ else
+ local success, func = pcall(function()
+ return loadstring(txt)
+ end)
+ if success and typeof(func) == "function" then
+ pcall(func)
+ end
+ end
+ input.Text = ""
  end)
 
  task.spawn(function()
-  while true do
-   task.wait(0.5)
-   local core = game:GetService("CoreGui")
-   local dev = core:FindFirstChild("DevConsoleMaster")
-   local win = dev and dev:FindFirstChild("DevConsoleWindow")
-   local ui = win and win:FindFirstChild("DevConsoleUI")
-   if win and ui and win.Visible then
-    if bar.Parent ~= win then
-     bar.Parent = win
-    end
-   else
-    reset()
-   end
-  end
+ while true do
+ task.wait(0.5)
+ local core = game:GetService("CoreGui")
+ local dev = core:FindFirstChild("DevConsoleMaster")
+ local win = dev and dev:FindFirstChild("DevConsoleWindow")
+ local ui = win and win:FindFirstChild("DevConsoleUI")
+ if win and ui and win.Visible then
+ if bar.Parent ~= win then
+ bar.Parent = win
+ end
+ else
+ reset()
+ end
+ end
  end)
 
  nukeUIs(game:GetService("CoreGui"))
