@@ -19,12 +19,13 @@
 - **/rejoin**
 - **/serverhop**
 
-**💾 Changelog | June 20, 2025**
+**💾 Changelog | June 21, 2025**
 
 - New **"/reset"** Command
 - New **"/credits"** Command
 - New **"/rejoin"** Command
 - New **"/serverhop"** Command
+- New **"/Tp"** Command
 
 **👑 Credits**
 + **Dhelan**       - Owner & Developer
