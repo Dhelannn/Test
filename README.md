@@ -16,6 +16,7 @@
 **👑 Credits**
 + **Dhelan**       - Owner & Developer
 + **xlox262**      - Co-Owner & Idea Guy
++ **plumbing**     - Developer/Contributor
 + **Owners of SSpy V3, IY and Dex** - I added their Scripts as Commands
 + **Kommander.IY** - The Script's Concept was Inspired by this IY Plugin
 
