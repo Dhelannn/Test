@@ -246,7 +246,20 @@ v.Massless = false
                     })  
                 end  
             elseif cmd == "/cmds" then  
-	fetch("https://raw.githubusercontent.com/Dhelannn/idk/main/Commands.lua")  
+	    warn("[TerminalX] Commands: "11")
+		warn("/enable        - Bring Executor UI back")
+		warn("/disable       - Hide Executor UI")
+		warn("/dex           - Dex Explorer")
+		warn("/infiniteyield - IY Admin")
+		warn("/remotespy     - SimpleSpy")
+		warn("/cmds          - Shows this list")
+		warn("/reset         - Force Reset")
+		warn("/credits       - Shows Credits")
+		warn("/serverhop     - Hops to different Server")
+		warn("/rejoin        - Joins the same Server")
+                warn("/tp [Player]   - Teleports to the Selected Player")
+                warn("") 
+                warn("")
 
             elseif cmd == "/credits" then  
 	warn("👑 Credits")  
