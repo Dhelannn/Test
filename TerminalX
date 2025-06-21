@@ -226,6 +226,63 @@ getgenv().TerminalX_LOADED = true
  end
  end
  end
+ elseif cmd == "/mfly" then
+ local FLYING = false
+ local TELEPORT_FLY = false
+ local SPEED = 1
+ local velocityName = "V"..math.random(10000,99999)
+ local gyroName = "G"..math.random(10000,99999)
+ local lp = game:GetService("Players").LocalPlayer
+ local RunService = game:GetService("RunService")
+ local function getRoot(char)
+ return char:FindFirstChild("HumanoidRootPart") or char:FindFirstChild("UpperTorso") or char:FindFirstChild("Torso")
+ end
+ local function stopFly()
+ FLYING = false
+ local root = getRoot(lp.Character)
+ if root then
+ local v = root:FindFirstChild(velocityName)
+ local g = root:FindFirstChild(gyroName)
+ if v then v:Destroy() end
+ if g then g:Destroy() end
+ end
+ local hum = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid")
+ if hum then hum.PlatformStand = false end
+ end
+ stopFly()
+ FLYING = true
+ local root = getRoot(lp.Character)
+ local cam = workspace.CurrentCamera
+ local bv = Instance.new("BodyVelocity", root)
+ bv.Name = velocityName
+ bv.MaxForce = Vector3.new(0, 0, 0)
+ bv.Velocity = Vector3.zero
+ local bg = Instance.new("BodyGyro", root)
+ bg.Name = gyroName
+ bg.MaxTorque = Vector3.new(9e9, 9e9, 9e9)
+ bg.P = 1000
+ bg.D = 50
+ local controlModule = require(lp.PlayerScripts:WaitForChild("PlayerModule"):WaitForChild("ControlModule"))
+ RunService.RenderStepped:Connect(function()
+	if not FLYING then return end
+	local moveVec = controlModule:GetMoveVector()
+	local speed = SPEED * 50
+	local vel = Vector3.zero
+
+	vel += cam.CFrame.RightVector * moveVec.X * speed
+	vel -= cam.CFrame.LookVector * moveVec.Z * speed
+
+	bv.MaxForce = Vector3.new(9e9, 9e9, 9e9)
+	bv.Velocity = vel
+	bg.CFrame = cam.CFrame
+
+	local hum = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid")
+	if hum then hum.PlatformStand = true end
+
+	if TELEPORT_FLY and vel.Magnitude > 1 then
+	root.CFrame = root.CFrame + vel * RunService.RenderStepped:Wait()
+	end
+        end)
  elseif cmd == "/antifling" then
  local char = plr.Character
  if char then
@@ -344,6 +401,8 @@ local commands = {
 	"/unantifling   - Removes Fling Immunity",
 	"/sit           - Forces you to Sit",
 	"/lay           - Makes you lay down",
+        "/mfly          - Mobile Fly", 
+        "/WASDfly       - Pc/Computer Fly",
 }
 
 for _, text in ipairs(commands) do
