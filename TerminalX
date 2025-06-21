@@ -147,7 +147,85 @@ getgenv().TerminalX_LOADED = true
  table.insert(args, word)
  end
 
- if cmd == "/enable" then
+elseif cmd == "/WASDfly" then
+local FLYING = false
+local SPEED = 1
+local TELEPORT_FLY = false
+local USE_QE = true
+local lp = game:GetService("Players").LocalPlayer
+local mouse = lp:GetMouse()
+local cam = workspace.CurrentCamera
+
+local root = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
+if not root then
+repeat task.wait()
+lp.CharacterAdded:Wait()
+until lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
+root = lp.Character:FindFirstChild("HumanoidRootPart")
+end
+local control = {F = 0, B = 0, L = 0, R = 0, Q = 0, E = 0}
+local lastControl = {F = 0, B = 0, L = 0, R = 0}
+local flySpeed = 0
+
+FLYING = true
+
+local bg = Instance.new("BodyGyro", root)
+bg.P = 9e4
+bg.MaxTorque = Vector3.new(9e9, 9e9, 9e9)
+bg.CFrame = root.CFrame
+
+local bv = Instance.new("BodyVelocity", root)
+bv.Velocity = Vector3.zero
+bv.MaxForce = Vector3.new(9e9, 9e9, 9e9)
+
+task.spawn(function()
+while FLYING do
+task.wait()
+local hum = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid")
+if hum then hum.PlatformStand = true end
+
+if control.L + control.R ~= 0 or control.F + control.B ~= 0 or control.Q + control.E ~= 0 then
+flySpeed = 50
+else
+flySpeed = 0
+end
+local dir = Vector3.zero
+dir += cam.CFrame.LookVector * (control.F + control.B)
+dir += (cam.CFrame * CFrame.new(control.L + control.R, (control.Q + control.E) * 0.2, 0)).p - cam.CFrame.p
+bv.Velocity = dir * flySpeed
+
+bg.CFrame = cam.CFrame
+
+if TELEPORT_FLY and bv.Velocity.Magnitude > 1 then
+root.CFrame = root.CFrame + bv.Velocity * task.wait()
+	end
+	end
+	bv:Destroy()
+	bg:Destroy()
+	local hum = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid")
+if hum then hum.PlatformStand = false end
+end)
+
+mouse.KeyDown:Connect(function(k)
+	local s = SPEED
+	if k == "w" then control.F = s end
+	if k == "s" then control.B = -s end
+	if k == "a" then control.L = -s end
+	if k == "d" then control.R = s end
+	if USE_QE and k == "q" then control.E = -s * 2 end
+	if USE_QE and k == "e" then control.Q = s * 2
+end
+end)
+
+mouse.KeyUp:Connect(function(k)
+	if k == "w" then control.F = 0 end
+	if k == "s" then control.B = 0 end
+	if k == "a" then control.L = 0 end
+	if k == "d" then control.R = 0 end
+	if k == "q" then control.E = 0 end
+	if k == "e" then control.Q = 0 end
+end)
+elseif cmd == "/enable" then
  bringBack()
  elseif cmd == "/disable" then
  hideShit()
@@ -283,6 +361,22 @@ getgenv().TerminalX_LOADED = true
 	root.CFrame = root.CFrame + vel * RunService.RenderStepped:Wait()
 	end
         end)
+ elseif cmd == "/unfly" then
+ local lp = game:GetService("Players").LocalPlayer
+ local root = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
+ if root then
+ for _, inst in ipairs(root:GetChildren()) do
+ if inst:IsA("BodyGyro") or inst:IsA("BodyVelocity") then
+ inst:Destroy()
+ end
+ end
+ end
+
+local hum = lp.Character and lp.Character:FindFirstChildWhichIsA("Humanoid")
+if hum then hum.PlatformStand = false end
+
+_G.__MOBILEFLY_EXECUTED = nil
+_G.__KEYBOARDFLY_EXECUTED = nil
  elseif cmd == "/antifling" then
  local char = plr.Character
  if char then
@@ -402,7 +496,8 @@ local commands = {
 	"/sit           - Forces you to Sit",
 	"/lay           - Makes you lay down",
         "/mfly          - Mobile Fly", 
-        "/WASDfly       - Pc/Computer Fly",
+        "/WASDfly       - WASD + QE Keys Fly",
+        "/Unfly         - Disable Fly",
 }
 
 for _, text in ipairs(commands) do
